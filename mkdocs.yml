@@ -1,0 +1,34 @@
+site_name: Mainpost documentation
+site_description: Eine großartige Beschreibung deines Projekts.
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.selection
+    - toc.integrate
+    - navigation.top
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+      name: Switch to dark mode
+      primary: teal
+      accent: purple
+    
+  font:
+    text: 'Roboto'
+    code: 'Source Code Pro'
+  features:
+    - navigation
+    - search
+    - meta
+
+
+markdown_extensions:
+  - admonition
+  - codehilite
