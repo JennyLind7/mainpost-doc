@@ -31,12 +31,11 @@ theme:
 nav:
   - Getting Started: setup.md
   - Architecture: architecture.md
-  - Data: data.md
+  - Data Overview: overview_data.md
   - Application: application.md
   - Backend: backend.md
 
-extra_css:
-  - custom/custom.css
+
 
 copyright: |
   &copy; 2023 Simon Unterlugauer, Dominik Petermann, Jakob Weigand, Jenny Lindner
