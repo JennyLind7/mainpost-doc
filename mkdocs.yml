@@ -1,13 +1,14 @@
-site_name: Mainpost documentation
-site_description: Eine großartige Beschreibung deines Projekts.
-
+site_name: Project documentation
 theme:
   name: material
+  logo: assets/mainpost-logo.png
+  favicon: assets/mainpost.png
   features:
     - navigation.tabs
-    - navigation.selection
+    - navigation.sections
     - toc.integrate
     - navigation.top
+    - search.suggest
     - search.highlight
     - content.tabs.link
     - content.code.annotation
@@ -16,19 +17,26 @@ theme:
   palette:
     - scheme: default
       toggle:
-      name: Switch to dark mode
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
       primary: teal
       accent: purple
-    
-  font:
-    text: 'Roboto'
-    code: 'Source Code Pro'
-  features:
-    - navigation
-    - search
-    - meta
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: teal
+      accent: lime
 
+nav:
+  - Getting Started: setup.md
+  - Architecture: architecture.md
+  - Data: data.md
+  - Application: application.md
+  - Backend: backend.md
 
-markdown_extensions:
-  - admonition
-  - codehilite
+extra_css:
+  - custom/custom.css
+
+copyright: |
+  &copy; 2023 Simon Unterlugauer, Dominik Petermann, Jakob Weigand, Jenny Lindner
