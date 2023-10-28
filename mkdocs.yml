@@ -1,7 +1,8 @@
 site_name: Project documentation
+
 theme:
   name: material
-  logo: assets/mainpost-logo.png
+  logo: assets/mainpost_logo.png
   favicon: assets/mainpost.png
   features:
     - navigation.tabs
@@ -17,25 +18,52 @@ theme:
   palette:
     - scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/weather-sunny
         name: Switch to dark mode
-      primary: teal
+      primary: grey
       accent: purple
     - scheme: slate
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-night
         name: Switch to light mode
-      primary: teal
+      primary: grey
       accent: lime
 
-nav:
-  - Getting Started: setup.md
-  - Architecture: architecture.md
-  - Data Overview: overview_data.md
-  - Application: application.md
-  - Backend: backend.md
 
+nav:
+  - Getting started: projectSetup/setup.md
+  - Architecture: 
+    - Database: architecture/database.md 
+    - Authentication Service: architecture/authentification.md 
+    - Frontend: architecture/frontend.md
+    - Backend: architecture/backend.md
+  - Data Overview: 
+    - Internal data: data/overview_data.md
+    - Database model: data/databaseModel.md
+  - Services:
+    - Services Web Application: externalServices/servicesWebApp.md
+    - Services Modelling: externalServices/optuna.md
+  - Web Application: 
+    - Dashboard: frontend/dashboard.md
+    - Liefergebiete: frontend/liefergebiete.md
+    - Mitarbeiter: frontend/mitarbeiter.md
+    - Abwesenheitserfassung: frontend/abwesenheit.md
+    - Historisches: frontend/historisches.md
+    - Predictions: frontend/prediction.md
+  - Backend: 
+    - Prediction: backend/backend.md
+  - Models: index.md
+  - Team: index.md
+
+
+extra_css:
+  - customer/custom.css
+
+extra_javascript:
+  - "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+  - "https://use.fontawesome.com/releases/v5.15.3/js/all.js"
 
 
 copyright: |
   &copy; 2023 Simon Unterlugauer, Dominik Petermann, Jakob Weigand, Jenny Lindner
+

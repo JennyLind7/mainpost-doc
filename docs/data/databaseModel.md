@@ -1,0 +1,1 @@
+<img src="/assets/db_modell.png" alt="Database Model" style="max-width:80%;" >
