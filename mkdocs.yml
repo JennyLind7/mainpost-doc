@@ -16,27 +16,29 @@ theme:
     - content.code.copy
   language: en
   palette:
-    - scheme: default
+    - scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
       primary: grey
-      accent: purple
-    - scheme: slate
+      accent: lime
+    - scheme: default
       toggle:
         icon: material/weather-night
         name: Switch to light mode
       primary: grey
-      accent: lime
+      accent: purple
 
 
 nav:
   - Getting started: projectSetup/setup.md
   - Architecture: 
+    - Overview: architecture/overview.md
     - Database: architecture/database.md 
     - Authentication Service: architecture/authentification.md 
     - Frontend: architecture/frontend.md
     - Backend: architecture/backend.md
+    - Dockerized Services: architecture/dockerizedArchitecture.md
   - Data Overview: 
     - Internal data: data/overview_data.md
     - Database model: data/databaseModel.md
@@ -54,7 +56,6 @@ nav:
     - Prediction: backend/backend.md
   - Models: index.md
   - Team: index.md
-
 
 extra_css:
   - customer/custom.css

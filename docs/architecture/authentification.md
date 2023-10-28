@@ -1,10 +1,16 @@
 # <i class="fas fa-key"></i> Authentification with Supabase
 
-Authentication within Supabase plays a significant role in ensuring security and privacy in applications. It provides developers with the necessary resources to securely manage user accounts and effectively regulate access rights, while providing a user-friendly login procedure for end users.
-<br>
+<div style="display: flex; align-items: center;">
+    <div style="flex: 8;">
+        Authentication within Supabase plays a significant role in ensuring security and privacy in applications. It provides developers with the necessary resources to securely manage user accounts and effectively regulate access rights, while providing a user-friendly login procedure for end users.
+    </div>
+    <div style="flex: 2;">
+        <img src="/assets/supabase-logo.webp" alt="Logo Supabase" style="max-width:100%;" >
+    </div>
+</div>
 <br>
 
-**important features and details of the Supabase database:**
+**important features and details of the Supabase authentification:**
 
 - <span style="background-color: fuchsia;">**User management**</span>: Supabase provides user management tools that allow developers to create, edit and manage user accounts. This includes the ability to create new users, update user profiles and deactivate or delete user accounts.
 <br>
@@ -20,8 +26,6 @@ Authentication within Supabase plays a significant role in ensuring security and
 <br>
 <br>
 
-[Supabase Authentication Documentation](https://supabase.com/auth)
-
----
+[Learn more about Supabase Authentication](https://supabase.com/auth)
 
 
