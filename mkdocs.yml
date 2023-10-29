@@ -59,6 +59,8 @@ nav:
 
 extra_css:
   - customer/custom.css
+  - https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+
 
 extra_javascript:
   - "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
