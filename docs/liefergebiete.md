@@ -2,3 +2,4 @@ Under the "Liefergebiete" menu tab, a table listing all districts is displayed. 
 
 <img src="assets/liefergebiete.png" alt="Districts" style="max-width:100%;">
 
+![Mitarbeiter](assets/liefergebiete.png)
