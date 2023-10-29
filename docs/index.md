@@ -10,6 +10,7 @@
     </div>
 </div>
 
+<img src="/assets/mitarbeiter-tabelle.png" alt="Employee table" style="max-width:50%;" >
 
 
 
