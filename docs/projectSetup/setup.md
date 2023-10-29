@@ -30,7 +30,9 @@ After all container are started, you can login to the application on <span style
 <br>
 <br>
 
-<iframe width="500" height="300" src="/assets/login.png" frameborder="0" allowfullscreen></iframe>
+<div style="flex: 1;">
+  <img src="/assets/login.png" alt="Login" style="max-width: 100%; height: auto;">
+</div>
 
 
 ## <i class="fas fa-globe"></i>  Ports
