@@ -3,9 +3,11 @@
 
 <img src="assets/mitarbeiter.png" alt="Employees" style="max-width:100%;">
 
-![Mitarbeiter](mitarbeiter-tabelle.png)
+![Mitarbeiter](assets/mitarbeiter-tabelle.png)
+
 <br>
-<img src="mitarbeiter.png" alt="Employees" style="max-width:100%;">
+<img src="assets/mitarbeiter.png" alt="Employees" style="max-width:100%;">
 <br>
-![Mitarbeiter](mitarbeiter.png)
+
+![Mitarbeiter](assets/mitarbeiter.png)
 
