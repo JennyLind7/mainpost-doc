@@ -31,7 +31,7 @@ After all container are started, you can login to the application on <span style
 <br>
 
 <div>
-  <img src="/assets/login.png" alt="Login" style="max-width: 50%; height: auto;">
+  <img src="assets/login.png" alt="Login" style="max-width: 50%; height: auto;">
 </div>
 
 
