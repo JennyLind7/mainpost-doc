@@ -47,7 +47,7 @@ nav:
     - Services Modelling: externalServices/optuna.md
   - Web Application: 
     - Dashboard: frontend/dashboard.md
-    - Liefergebiete: frontend/liefergebiete.md
+    - Liefergebiete: liefergebiete.md
     - Mitarbeiter: frontend/mitarbeiter.md
     - Abwesenheitserfassung: frontend/abwesenheit.md
     - Historisches: frontend/historisches.md
