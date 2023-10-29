@@ -48,7 +48,7 @@ nav:
   - Web Application: 
     - Dashboard: frontend/dashboard.md
     - Liefergebiete: frontend/liefergebiete.md
-    - Mitarbeiter: mitarbeiter.md
+    - Mitarbeiter: frontend/mitarbeiter.md
     - Abwesenheitserfassung: frontend/abwesenheit.md
     - Historisches: frontend/historisches.md
     - Predictions: frontend/prediction.md
