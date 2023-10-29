@@ -57,6 +57,10 @@ nav:
   - Models: index.md
   - Team: index.md
 
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
 extra_css:
   - customer/custom.css
   - https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css

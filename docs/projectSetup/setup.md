@@ -31,7 +31,6 @@ After all container are started, you can login to the application on <span style
 <br>
 <img src="/assets/login.png" alt="Login Web Application" style="max-width:50%;" >
 
-
 ## <i class="fas fa-globe"></i>  Ports
 In default configuration the docker container run on following ports:
 <ul>

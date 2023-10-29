@@ -1,20 +1,3 @@
-.responsive-image {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  max-width: 100%;
-  transition: transform 0.3s ease;
-}
-
-.responsive-image img {
-  width: 100%;
-  height: auto;
-}
-
-.responsive-image:hover {
-  transform: scale(1.05); /* Fügen Sie hier die gewünschte Vergrößerung hinzu */
-  transition: transform 0.3s ease;
-}
 
 .material-button {
   display: inline-block;
