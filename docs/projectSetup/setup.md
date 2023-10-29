@@ -29,7 +29,7 @@ git clone https://github.com/SimonUnterlugauer/dockerized_mainpost_frontend
 After all container are started, you can login to the application on <span style="color: red;"> http://localhost:8501/</span>. Login with you credentials. Your username is the first letter of the name and the full surename.
 <br>
 <br>
-<img src="/assets/login.png" alt="Login Web Application" style="max-width:50%;" >
+![Login Web Application](/assets/login.png)
 
 ## <i class="fas fa-globe"></i>  Ports
 In default configuration the docker container run on following ports:
