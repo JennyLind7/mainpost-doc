@@ -30,8 +30,8 @@ After all container are started, you can login to the application on <span style
 <br>
 <br>
 
-<div style="flex: 1;">
-  <img src="/assets/login.png" alt="Login" style="max-width: 100%; height: auto;">
+<div>
+  <img src="/assets/login.png" alt="Login" style="max-width: 50%; height: auto;">
 </div>
 
 
