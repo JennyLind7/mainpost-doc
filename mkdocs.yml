@@ -31,7 +31,7 @@ theme:
 
 
 nav:
-  - Getting started: setup.md
+  - Getting started: projectSetup/setup.md
   - Architecture: 
     - Overview: architecture/overview.md
     - Database: architecture/database.md 
