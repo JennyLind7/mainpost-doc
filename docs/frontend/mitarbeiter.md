@@ -3,11 +3,11 @@ title: Mitarbeiter
 
 ---
 
-![Mitarbeiter](mitarbeiter.png)
+![Mitarbeiter](mitarbeiter_overview.png)
 
 <br>
 
-![Mitarbeiter](mitarbeiter-tabelle.png)
+![Mitarbeiter](mitarbeiter_tabelle.png)
 
 
 

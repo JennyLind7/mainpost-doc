@@ -1,14 +1,15 @@
 # <i class="fas fa-database"></i> Database
 
+![Logo Supabase](supabase-logo.webp){ align=right }
+
 <div style="display: flex; align-items: center;">
     <div style="flex: 8;">
         Supabase is an open source platform designed to help developers create applications that require backend services and a database. This platform provides a variety of tools and services that enable developers to build web applications and mobile apps more efficiently without having to worry about the complexities of managing and scaling the backend infrastructure.
     </div>
-    <div style="flex: 2;">
-        <img src="/assets/supabase-logo.webp" alt="Logo Supabase" style="max-width:100%;" >
-    </div>
 </div>
 <br>
+
+
 
 **important features and details of the Supabase database:**
 

@@ -1,12 +1,12 @@
 # <i class="fas fa-server"></i> Backend
 
 ## FastAPI 
+
+![Logo Vue.js](fastAPI_logo.png){ align=right }
+
 <div style="display: flex; align-items: center;">
     <div style="flex: 8;">
         FastAPI is a modern Python framework for developing web applications and APIs.
-    </div>
-    <div style="flex: 2;">
-        <img src="/assets/fastAPI_logo.png" alt="Logo fastAPI" style="max-width:100%;" >
     </div>
 </div>
 
@@ -27,12 +27,12 @@
 [Learn more about FastAPI](https://fastapi.tiangolo.com/)
 
 ## MLflow
+
+![Logo Vue.js](mlflow_logo.png){ align=right }
+
 <div style="display: flex; align-items: center;">
     <div style="flex: 8;">
         MLflow is an open source platform for managing the entire machine learning lifecycle. It is designed to simplify and standardise the development, training, management and deployment of machine learning models.
-    </div>
-    <div style="flex: 2;">
-        <img src="/assets/MLflow-logo.png" alt="Logo MLflow" style="max-width:100%;" >
     </div>
 </div>
 

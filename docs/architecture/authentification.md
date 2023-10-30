@@ -1,11 +1,10 @@
 # <i class="fas fa-key"></i> Authentification with Supabase
 
+![Logo Supabase](supabase-logo.webp){ align=right }
+
 <div style="display: flex; align-items: center;">
     <div style="flex: 8;">
         Authentication within Supabase plays a significant role in ensuring security and privacy in applications. It provides developers with the necessary resources to securely manage user accounts and effectively regulate access rights, while providing a user-friendly login procedure for end users.
-    </div>
-    <div style="flex: 2;">
-        <img src="/assets/supabase-logo.webp" alt="Logo Supabase" style="max-width:100%;" >
     </div>
 </div>
 <br>

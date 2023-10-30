@@ -8,12 +8,11 @@
 
 ## Vue.js Application
 
+![Logo Vue.js](vue_logo.png){ align=right }
+
 <div style="display: flex; align-items: center;">
     <div style="flex: 8;">
         Vue.js is an open-source JavaScript framework mainly used for developing user interfaces of web applications and single-page applications (SPAs).
-    </div>
-    <div style="flex: 2;">
-        <img src="/assets/vue_logo.png" alt="Logo Vue.js" style="max-width:50%;" >
     </div>
 </div>
 

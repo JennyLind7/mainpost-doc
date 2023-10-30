@@ -1,1 +1,1 @@
-<img src="/assets/application_non_transparent.png" alt="Architecture" style="max-width:100%;">
+![Architecture Overview](architecture_overview.png)
