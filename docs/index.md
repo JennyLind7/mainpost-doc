@@ -6,6 +6,31 @@
    <br>
    <br>
    Our designed web application, which implements the necessary functionalities, can also be explored through the following link:
+<style>
+  .info-box {
+    background-color: white;
+    padding: 10px;
+    height: 100%; /* Feste Höhe für die Infoboxen */
+    color: black;
+    display: flex; /* Infobox als Flex-Container */
+    align-items: center; /* Zentriert den Inhalt vertikal */
+  }
+  .columns {
+    display: flex;
+  }
+  .column {
+    flex: 1;
+  }
+  .info-box img {
+    width: 60px; /* Bildbreite auf 60px setzen */
+    max-width: 60px; /* Maximale Breite für das Bild (Anpassen nach Bedarf) */
+    margin-right: 10px; /* Abstand zwischen Bild und Überschrift (Anpassen nach Bedarf) */
+  }
+  .info-box p {
+    flex: 1; /* Nimmt den verfügbaren Platz ein und schiebt die Überschrift nach rechts */
+  }
+</style>
+
 
 <div class="columns">
   <div class="column">
