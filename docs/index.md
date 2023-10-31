@@ -36,8 +36,6 @@
             <a href="https://mainpost-projektseminar.netlify.app">
               Vue.js Web Application
             </a>
-          </li>
-          <li class="invisible-bullet"></li> <!-- Hinzufügen einer Klasse für den unsichtbaren Bullet Point -->
         </ul>
       </div>
     </div>

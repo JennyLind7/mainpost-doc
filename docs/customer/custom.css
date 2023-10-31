@@ -24,8 +24,3 @@
 .info-box p {
   flex: 1; /* Nimmt den verfügbaren Platz ein und schiebt die Überschrift nach rechts */
 }
-
-.invisible-bullet {
-  list-style-type: none; /* Entfernt den Bullet Point */
-  visibility: hidden; /* Macht den Bullet Point unsichtbar */
-}
