@@ -6,31 +6,6 @@
    <br>
    <br>
    Our designed web application, which implements the necessary functionalities, can also be explored through the following link:
-<style>
-  .info-box {
-    background-color: white;
-    padding: 10px;
-    height: 100%; /* Feste Höhe für die Infoboxen */
-    color: black;
-    display: flex; /* Infobox als Flex-Container */
-    align-items: center; /* Zentriert den Inhalt vertikal */
-  }
-  .columns {
-    display: flex;
-  }
-  .column {
-    flex: 1;
-  }
-  .info-box img {
-    width: 60px; /* Bildbreite auf 60px setzen */
-    max-width: 60px; /* Maximale Breite für das Bild (Anpassen nach Bedarf) */
-    margin-right: 10px; /* Abstand zwischen Bild und Überschrift (Anpassen nach Bedarf) */
-  }
-  .info-box p {
-    flex: 1; /* Nimmt den verfügbaren Platz ein und schiebt die Überschrift nach rechts */
-  }
-</style>
-
 
 <div class="columns">
   <div class="column">
@@ -39,12 +14,12 @@
       <div class="info-box-content">
         <ul>
           <li>
-            <a href="https://github.com/SimonUnterlugauer/dockerized_mainpost_frontend">
+            <a href="https://github.com/SimonUnterlugauer/dockerized_mainpost_frontend" target="_blank">
               Frontend GitHub Repository
             </a>
           </li>
           <li>
-            <a href="https://github.com/IhrBenutzername/backend">
+            <a href="https://github.com/IhrBenutzername/backend" target="_blank">
               Backend GitHub Repository
             </a>
           </li>
@@ -53,18 +28,21 @@
     </div>
   </div>
   <div class="column">
-    <div class="info-box">
+    <div class="info-box"> 
       <img src="vue_logo_index.png" alt="Web Application">
       <div class="info-box-content">
         <ul>
           <li>
-            <a href="https://mainpost-projektseminar.netlify.app">
+            <a href="https://mainpost-projektseminar.netlify.app" target="_blank">
               Vue.js Web Application
             </a>
+          </li>
         </ul>
       </div>
     </div>
   </div>
 </div>
+
+
 
 
