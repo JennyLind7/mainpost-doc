@@ -1,0 +1,17 @@
+.info-box {
+  background-color: white;
+  padding: 10px;
+  height: 100%; /* Feste Höhe für die Infoboxen */
+  color: black;
+}
+
+.columns {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+
+
