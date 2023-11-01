@@ -29,7 +29,6 @@ theme:
       primary: grey
       accent: purple
 
-
 repo_url: https://github.com/SimonUnterlugauer/dockerized_mainpost_frontend
 repo_name: GitHub
 
@@ -57,22 +56,19 @@ nav:
     - Predictions: frontend/prediction.md
   - Backend: 
     - Prediction: backend/backend.md
-  - Models: backend/backend.md
 
 markdown_extensions:
   - attr_list
   - md_in_html
+  - pymdownx.tabbed
 
 extra_css:
   - https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
   - customer/custom.css
 
-
 extra_javascript:
   - "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
   - "https://use.fontawesome.com/releases/v5.15.3/js/all.js"
-  
-
 
 copyright: |
   &copy; 2023 Simon Unterlugauer, Dominik Petermann, Jakob Weigand, Jenny Lindner
