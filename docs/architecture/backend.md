@@ -9,6 +9,7 @@
         FastAPI is a modern Python framework for developing web applications and APIs.
     </div>
 </div>
+<br>
 
 **Important features of FastAPI:**
 
@@ -22,9 +23,6 @@
 <br>
 - <span style="background-color: fuchsia;">**Embedded validation and serialisation**</span>: FastAPI facilitates input validation and output serialisation, which simplifies the development of robust APIs.
 <br>
-<br>
-
-[Learn more about FastAPI](https://fastapi.tiangolo.com/)
 
 ## MLflow
 
@@ -50,5 +48,3 @@
 <br>
 - <span style="background-color: fuchsia;">**Integrations**</span>: There are integrations of MLflow with various tools and platforms, including Jupyter Notebooks, Apache Spark and many popular cloud platforms.
 <br>
-
-[Learn more about MLflow](https://mlflow.org/)

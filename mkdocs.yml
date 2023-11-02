@@ -37,7 +37,7 @@ nav:
   - Architecture: 
     - Overview: architecture/overview.md
     - Database: architecture/database.md 
-    - Authentication Service: architecture/authentification.md 
+    - Authentication Service: architecture/auth.md 
     - Frontend: architecture/frontend.md
     - Backend: architecture/backend.md
     - Dockerized Services: architecture/dockerizedArchitecture.md
@@ -69,6 +69,7 @@ extra_css:
 extra_javascript:
   - "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
   - "https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+  - customerjs/style.js
 
 copyright: |
   &copy; 2023 Simon Unterlugauer, Dominik Petermann, Jakob Weigand, Jenny Lindner

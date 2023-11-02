@@ -4,12 +4,32 @@
 <div style="display: flex; align-items: center;">
     <div style="flex: 8;">
      FullCalendar is a powerful JavaScript library used to create and display interactive calendars and event planners in web applications. This library allows to integrate appealing and user-friendly calendar views into their web applications. FullCalendar is particularly useful for applications that need to manage appointments, events and schedules.
-    </div>
+    </div>    
 </div>
 <br>
-<span style="color: red;">Beispielcode für Einbindung & Verwendung von FullCalendar</span>
 
-[Learn more about FullCalendar](https://fullcalendar.io/)
+<details>
+  <summary>Klicken Sie hier, um den Code anzuzeigen</summary>
+  <pre><code>
+    import FullCalendar from '@fullcalendar/vue3'
+    import dayGridPlugin from '@fullcalendar/daygrid'
+    interactionPlugin from '@fullcalendar/interaction'
+
+    export default {
+      components: {
+        FullCalendar // make the <FullCalendar> tag available
+      },
+      data() {
+        return {
+          calendarOptions: {
+            plugins: [dayGridPlugin, interactionPlugin],
+            initialView: 'dayGridMonth'
+          }
+        }
+      }
+    }
+  </code></pre>
+</details>
 
 ## Mapbox
 
@@ -26,9 +46,6 @@
     </div>
 </div>
 <br>
-<span style="color: red;">Beispielcode für Einbindung & Verwendung von Mapbox</span>
-
-[Learn more about Mapbox](https://www.mapbox.com/)
 
 ## OpenweatherMap
 
@@ -57,11 +74,6 @@
     </div>
 </div>
 
-<span style="color: red;">Beispielcode http request einfügen</span>
-<br>
+### Weather data in forecast models
 
-### Weather data in forecast models 
 
-<span style="color: red;">Verwendung von OpenWeatherMap in Modellierung</span>
-
-[Learn more about OpenWeatherMap](https://openweathermap.org/)

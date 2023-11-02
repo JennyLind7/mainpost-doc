@@ -25,6 +25,6 @@
 <br>
 <br>
 
-[Learn more about Supabase Authentication](https://supabase.com/auth)
+
 
 

@@ -9,8 +9,6 @@
 </div>
 <br>
 
-
-
 **important features and details of the Supabase database:**
 
 - <span style="background-color: fuchsia;">**Postgres database**</span>: Supabase is based on PostgreSQL, a powerful open source database. PostgreSQL is known for its reliability, extensibility and scalability. Supabase provides a fully managed PostgreSQL instance, allowing developers to take advantage of this database without the need for time-consuming maintenance tasks.
@@ -29,7 +27,6 @@
 <br>
 <br>
 
-[Learn more about the Supabase Database](https://supabase.com/database)
 
 
 

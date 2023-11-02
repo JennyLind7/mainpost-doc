@@ -24,3 +24,27 @@
 .info-box p {
   flex: 1; /* Nimmt den verfügbaren Platz ein und schiebt die Überschrift nach rechts */
 }
+
+
+/* schließbares Element*/
+details[open] > summary:after {
+  content: "-";
+}
+details:not([open]) > summary:after {
+  content: "+";
+}
+details {
+  cursor: pointer;
+}
+
+/* offenes Element*/
+.custom-details {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+

@@ -11,7 +11,7 @@
     </ul>
   </li>
 </ol>
-<span style="color: red;">**Git Backend Link einfügen!!**</span>
+
 ## <i class="fas fa-wrench"></i>  Set up
 
 1. Clone our Github Repository and navigate with your terminal to your folder of choice.
@@ -20,13 +20,9 @@
 ```
 git clone https://github.com/SimonUnterlugauer/dockerized_mainpost_frontend
 ```
-<span style="color: red;">**Git Backend**</span>
-<br>
-<br>
-<span style="color: red;">**Docker Container erstellen**</span>
 
 ## <i class="fas fa-lock"></i>  Login
-After all container are started, you can login to the application on <span style="color: red;"> http://localhost:8501/</span>. Login with you credentials. Your username is the first letter of the name and the full surename.
+After all container are started, you can login to the application on [Netlify](https://mainpost-projektseminar.netlify.app/). Login with you credentials. Your username is the first letter of the name and the full surename.
 <br>
 <br>
 
@@ -37,12 +33,10 @@ In default configuration the docker container run on following ports:
 <ul>
   <li><strong>Frontend:</strong>
     <p style="margin-left: 20px;">
-      Our Web Application runs at <span style="color: red;">http://localhost:8501/</span> in the browser of your choice.
     </p>
   </li>
   <li><strong>Backend:</strong>
     <p style="margin-left: 20px;">
-      <span style="color: red;">Backend Infos einfügen</span> 
     </p>
   </li>
 </ul>

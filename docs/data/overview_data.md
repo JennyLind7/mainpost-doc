@@ -1,3 +1,62 @@
+
+<details>
+  <summary>Abscences</summary>
+  Absences reflect person-related absences such as sickness and holidays.
+  <table style="width: 100%;">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>DataType</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>number</td>
+        <td>bigint</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>bigint</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>employee_id</td>
+        <td>bigint</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>allocation_id</td>
+        <td>bigint</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>reason</td>
+        <td>character varying</td>
+        <td>Sick or on holiday</td>
+      </tr>
+      <tr>
+        <td>start_date</td>
+        <td>date</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>end_date</td>
+        <td>date</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>temporary</td>
+        <td>boolean</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
+
+
 ## Absences
 
 Absences reflect person-related absences such as sickness and holidays.

@@ -30,6 +30,3 @@
 - <span style="background-color: fuchsia;">**Routing**</span>: Vue Router is an official extension to Vue.js that simplifies the creation of single-page applications with client-side routing functionality.
 <br>
 - <span style="background-color: fuchsia;">**Tools and ecosystem**</span>: Vue.js has an active and growing community. There are numerous extensions, plugins, and tools that facilitate the development and debugging of Vue.js applications.
-
-
-[Learn more about Vue.js](https://vuejs.org/)
