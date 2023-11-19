@@ -29,11 +29,13 @@ theme:
       primary: grey
       accent: purple
 
-repo_url: https://github.com/SimonUnterlugauer/dockerized_mainpost_frontend
+repo_url: https://github.com/UHPDome/backend_mainpost
 repo_name: GitHub
 
 nav:
-  - Getting started: projectSetup/setup.md
+  - Project Setup: 
+    - Installation: projectSetup/installation.md
+    - Docker Setup: projectSetup/dockerSetup.md 
   - Architecture: 
     - Overview: architecture/overview.md
     - Database: architecture/database.md 
@@ -47,13 +49,15 @@ nav:
   - Services:
     - Services Web Application: externalServices/servicesWebApp.md
     - Services Modelling: externalServices/optuna.md
-  - Web Application: 
+  - Web Application:
+    - Landing Page: frontend/landingpage.md
+    - Login: frontend/login.md
     - Dashboard: frontend/dashboard.md
     - Liefergebiete: frontend/liefergebiete.md
     - Mitarbeiter: frontend/mitarbeiter.md
     - Abwesenheitserfassung: frontend/abwesenheit.md
     - Historisches: frontend/historisches.md
-    - Predictions: frontend/prediction.md
+    - Planung: frontend/planung.md
   - Backend: 
     - Prediction: backend/backend.md
 
