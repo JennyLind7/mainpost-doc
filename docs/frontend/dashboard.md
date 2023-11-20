@@ -1,4 +1,4 @@
-# <i class="fas fa-house"></i> Dashboard
+# <i class="fas fa-desktop"></i> Dashboard
 
 The dashboard provides the user with a comprehensive overview of various information and functions. It includes profile information, company details and the status of the user account. To get an initial overview of current figures, "Lieferausfälle je Jahr" and "Verteilung der Verkehrsmittel für Briefe" are loaded on the dashboard in the shape of bar or line charts. Users can choose between the chart types to visualise the data in different ways.
 <br>
