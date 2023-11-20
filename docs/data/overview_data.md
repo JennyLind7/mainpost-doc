@@ -1,4 +1,7 @@
-
+<span style="color: red;">Todo:<br>
+- Daten alphabetisch ordnen <br>
+- Checken auf Vollständigkeit
+</span>
 <details class="custom-details">
   <summary>Abscences</summary>
   Absences reflect person-related absences such as sickness and holidays.

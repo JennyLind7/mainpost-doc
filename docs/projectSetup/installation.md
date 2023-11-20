@@ -1,12 +1,10 @@
+# <i class="fas fa-wrench"></i>  Installation
 
-These instructions will guide you on how to get the application running on your local system.
-
-## Requirements
-
-<span style="color: red;">Requirements einfügen</span>
+  <i class="fab fa-docker"></i> Install Docker on your system<br>
+  <i class="fab fa-github"></i> You need a GitHub account
 
 
-## <i class="fas fa-wrench"></i>  Project Installation
+## Project Setup
 
 ### Github Repositories
 
@@ -51,14 +49,17 @@ git clone git@github.com:UHPDome/backend_mainpost.git
 ```
 </details>
 
+---
+
 ### Edit .env.example
 
-Edit <strong>.env.example</strong> file in the <strong>/frontend</strong> folder as per format specified below.
 ```
 VUE_APP_SUPABASE_KEY=value
 VUE_APP_MAPBOX_API_TOKEN=value
 ```
+The corresponding file can also be found in [/frontend](https://github.com/UHPDome/backend_mainpost/tree/main/frontend)
 
+--- 
 ### Project directory
 
 Navigate into the project directory:
@@ -71,6 +72,8 @@ Start the Docker containers:
 ```
 docker-compose up
 ```
+---
+
 ### docker-compose.yml
 
 <details>
@@ -121,19 +124,6 @@ services:
 ```
 </details>
 
-
-## <i class="fas fa-globe"></i>  Ports
-In default configuration the docker container run on following ports:
-<ul>
-  <li><strong>Frontend:</strong>
-    <p style="margin-left: 20px;">
-    </p>
-  </li>
-  <li><strong>Backend:</strong>
-    <p style="margin-left: 20px;">
-    </p>
-  </li>
-</ul>
 
 
 

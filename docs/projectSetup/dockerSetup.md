@@ -1,4 +1,4 @@
-The Dockerfiles can be found in the /docker directory. They outline the configurations for the various parts of the application:
+# <i class="fab fa-docker"></i> Docker Setup
 ## Vuejs - Frontend
 Right now in docker compose the dev dockerfile gets executed.
 
@@ -63,8 +63,10 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ```
 </details>
+ ---
 
 ## Fast - API Backend
+
 Builds the container for the backend/api implementation. 
 <details>
 <summary>Backend Dockerfile</summary>
@@ -100,6 +102,8 @@ CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 ```
 </details>
 
+---
+
 ## MLFlow - Modeltracking
 Builds the container for the mlflow instance which is used for the model tracking. 
 <details>
@@ -121,6 +125,7 @@ CMD ["mlflow", "server", "--backend-store-uri", "/mlflow/mlruns", "--default-art
 ```
 </details>
 
+---
 
 ## Cronjob Implementation
 Builds the container for the mlflow instance which is used for the model tracking. 
@@ -174,3 +179,7 @@ ENTRYPOINT ["cron", "-f"]
 
 ```
 </details>
+
+---
+
+<i class="fas fa-folder"></i> The Dockerfiles can also be found in the [/docker directory](https://github.com/UHPDome/backend_mainpost/tree/main/docker). 

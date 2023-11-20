@@ -1,16 +1,34 @@
-# Overview Github Repositories and Web Application 
+# Multiple time series analysis for Main-Post employee outages
 
 <img src="postbote.png" alt="Postbote" style="max-width: 200px; float: left; margin-right: 20px;">
 <div style="display: flex; align-items: center;">
     <div style="flex: 8;">
-        Postal carriers are the backbone of last-mile logistics. However, due to increased shipment volumes, varying weather conditions, and often high workloads, postal carriers are disproportionately affected by sickness and absence days. In collaboration with the Main-Post Media Group, a data-driven tool has been developed for the analysis of downtime.
+       Postal delivery staff are the backbone of logistics over the last mile. However, due to the increased volume of consignments, changing weather conditions and the often high workload, postal delivery staff are disproportionately affected by sick days and days lost. In cooperation with the Main-Post media group, a data-supported tool for analysing absences was developed.
     </div>
 </div>
 <br>
 <br>
 <br>
 <br>
-To ensure modularity, the approach taken was to develop the frontend and backend separately. For this purpose, two separate GitHub repositories were set up: one for the frontend and one for the backend.
+The application makes it possible to predict the cancellations of the Main-Post delivery staff. To do this, historical cancellations as well as historical and future weather data are taken into account. The optimisation framework can also be used to determine the best possible replacement for missing employees.
+<br>
+<br>
+
+<details open>
+  <summary>Vue.js Web Application </summary>
+  <div class="info-box">
+    <img src="vue_logo_index.png" alt="GitHub Repositories">
+    <div class="info-box-content">
+      <ul>
+          <li>
+            <a href="https://mainpost-projektseminar.netlify.app" target="_blank">
+              Vue.js Web Application
+            </a>
+          </li>
+        </ul>
+    </div>
+  </div>
+</details>
 
 <details open>
   <summary>GitHub Repositories</summary>
@@ -33,21 +51,6 @@ To ensure modularity, the approach taken was to develop the frontend and backend
   </div>
 </details>
 
-<details open>
-  <summary>Vue.js Web Application </summary>
-  <div class="info-box">
-    <img src="vue_logo_index.png" alt="GitHub Repositories">
-    <div class="info-box-content">
-      <ul>
-          <li>
-            <a href="https://mainpost-projektseminar.netlify.app" target="_blank">
-              Vue.js Web Application
-            </a>
-          </li>
-        </ul>
-    </div>
-  </div>
-</details>
 
 
 

@@ -24,6 +24,8 @@
 - <span style="background-color: #0284c7;">**Embedded validation and serialisation**</span>: FastAPI facilitates input validation and output serialisation, which simplifies the development of robust APIs.
 <br>
 
+---
+
 ## Darts
 
 ![Logo Darts](darts.png){ width=230px style="float: right;" }
@@ -44,6 +46,8 @@
 <br>
 - <span style="background-color: #0284c7;">**Scalability**</span>: Darts is designed to handle large-scale time series datasets efficiently. Also, all Darts machine learning models are supported to be trained on multiple time series.
 <br>
+
+---
 
 ## Optuna
 
@@ -66,6 +70,7 @@
 - <span style="background-color: #0284c7;">**Visualization and Analysis**</span>: The framework provides visualizations and analysis tools to understand the optimization process, allowing users to gain insights into parameter interactions and convergence behavior.
 <br>
 
+---
 
 ## MLflow
 

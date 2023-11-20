@@ -48,7 +48,7 @@ nav:
     - Database model: data/databaseModel.md
     - Data Preparation: data/dataPreparation.md
   - Services:
-    - Services Web Application: externalServices/servicesWebApp.md
+    - Further services: externalServices/servicesWebApp.md
     - Services Modelling: externalServices/optuna.md
   - Web Application:
     - Landing Page: frontend/landingpage.md

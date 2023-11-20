@@ -56,23 +56,75 @@
        <br>
        <br>
         OpenWeatherMap is a service that provides real-time weather data and information. It provides access to various weather data, including current weather conditions, forecasts, historical weather data and climate information.
-        <br>
-        <br>
     </div>
 </div>
+Following api queries to extract weather information from openweathermap have been executed:
+```
+## get weather information for next five days of specified area
+async function getWeatherData(area_id)
+```
+<details>
+<summary>View our weatherService.js</summary>
 
-### Integration of weather data in the web application
+```
+import axios from 'axios';
 
-<div style="display: flex; align-items: center;">
-    <div style="flex: 8;">     
-        <ul>
-          <li>
-            To retrieve weather data from OpenWeatherMap in our Vue.js application, we used an HTTP client that allows us to send requests to the OpenWeatherMap API and get the corresponding data. In our case, we use the <span style="background-color: fuchsia;"><strong>Axios package</strong></span>, which is a commonly used library for sending HTTP requests in Vue.js applications.
-          </li>
-        </ul>
-        <br>
-    </div>
-</div>
+export async function getWeatherData(area_id) {
+    const apiKey = '768229ab8175e578773e450e2c81e5a3';
+    const days = 5;  // Number of days for the forecas
+    const location = getLocationCenter(area_id);
+    
+    const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&cnt=${days * 8}&units=metric&appid=${apiKey}`;
+    // console.log("try");
+    let response;
+    try {
+        response = await axios.get(forecastApiUrl);
+        console.log(response);
+    } catch (error) {
+        console.error('Fehler beim Abrufen der Wetterdaten:', error);
+    }
+    return response;
+}
+
+function getLocationCenter(area_id) {
+    var location;
+    if (area_id == 1.1) {
+        location = "Wuerzburg";
+    } else if (area_id == 1.6) {
+        location = "Wuerzburg";
+    } else if (area_id == 1.7) {
+        location = "Rimpar";
+    } else if (area_id == 1.3) {
+        location = "Gemuenden";
+    } else if (area_id == 2.6) {
+        location = "Gerolzhofen";
+    } else if (area_id == 2.5) {
+        location = "Hammelburg";
+    } else if (area_id == 2.3) {
+        location = "Werneck";
+    } else if (area_id == 1.2) {
+        location = "Helmstadt";
+    } else if (area_id == "FN") {
+        location = "Tauberbischofsheim";
+    } else if (area_id == 1.4) {
+        location = "Kitzingen";
+    } else if (area_id == 1.5) {
+        location = "Ochsenfurt";
+    } else if (area_id == 2.7) {
+        location = "Oerlenbach";
+    } else if (area_id == 2.8) {
+        location = "Stadtlauringen";
+    }else if (area_id == 2.4) {
+        location = "Oberelsbach";
+    }else {
+        location = "Wuerzburg";
+    }
+    return location;
+}
+
+```
+</details>
+
 
 ### Weather data in forecast models
 
