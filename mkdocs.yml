@@ -46,7 +46,6 @@ nav:
   - Data Overview: 
     - Internal data: data/overview_data.md
     - Database model: data/databaseModel.md
-    - Data Preparation: data/dataPreparation.md
   - Services:
     - Further services: externalServices/servicesWebApp.md
     - Services Modelling: externalServices/optuna.md
@@ -59,6 +58,11 @@ nav:
     - Abwesenheitserfassung: frontend/abwesenheit.md
     - Historisches: frontend/historisches.md
     - Planung: frontend/planung.md
+  - Backend:
+    - Data Preparation: backend/data_prep.md
+    - Models: backend/models.md
+    - Performance: backend/performance.md
+    - Prediction: backend/prediction.md
 
 markdown_extensions:
   - attr_list

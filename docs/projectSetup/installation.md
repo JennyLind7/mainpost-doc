@@ -1,35 +1,14 @@
 # <i class="fas fa-wrench"></i>  Installation
 
-  <i class="fab fa-docker"></i> Install Docker on your system<br>
-  <i class="fab fa-github"></i> You need a GitHub account
+<i class="fab fa-docker" style="margin-left:20px;"></i> <span style="margin-left:20px;">Install Docker on your system</span><br>
+<i class="fab fa-github" style="margin-left:20px;"></i> <span style="margin-left:20px;">You need a GitHub account</span>
 
 
 ## Project Setup
 
 ### Github Repositories
 
-Clone our Github Repositories.
-
-<i class="fab fa-github"></i> <strong>Frontend</strong>
-<details>
-<summary>HTTPS</summary>
-
-```
-https://github.com/SimonUnterlugauer/dockerized_mainpost_frontend.git
-
-```
-</details>
-
-<details>
-<summary>SSH</summary>
-
-```
-git@github.com:SimonUnterlugauer/dockerized_mainpost_frontend.git
-
-```
-</details>
-
-<i class="fab fa-github"></i> <strong>Backend</strong>
+<span style="margin-left:20px;">Clone our Github Repository:</span>
 
 <details>
 <summary>HTTPS</summary>
@@ -57,18 +36,18 @@ git clone git@github.com:UHPDome/backend_mainpost.git
 VUE_APP_SUPABASE_KEY=value
 VUE_APP_MAPBOX_API_TOKEN=value
 ```
-The corresponding file can also be found in [/frontend](https://github.com/UHPDome/backend_mainpost/tree/main/frontend)
+<span style="margin-left:20px;">The corresponding file can also be found in [/frontend](https://github.com/UHPDome/backend_mainpost/tree/main/frontend)</span>
 
 --- 
 ### Project directory
 
-Navigate into the project directory:
+<span style="margin-left:20px;">Navigate into the project directory:</span>
 ```
 cd backend_mainpost
 ```
 ### Start Docker Container
 
-Start the Docker containers:
+<span style="margin-left:20px;">Start the Docker containers:</span>
 ```
 docker-compose up
 ```

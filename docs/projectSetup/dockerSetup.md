@@ -1,6 +1,6 @@
 # <i class="fab fa-docker"></i> Docker Setup
 ## Vuejs - Frontend
-Right now in docker compose the dev dockerfile gets executed.
+<span style="margin-left:20px;">Right now in docker compose the dev dockerfile gets executed.</span>
 
 ### Dockerfile for dev
 - Builds the container for the frontend application. 
@@ -67,7 +67,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ## Fast - API Backend
 
-Builds the container for the backend/api implementation. 
+- Builds the container for the backend/api implementation. 
 <details>
 <summary>Backend Dockerfile</summary>
 
@@ -105,7 +105,7 @@ CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 ---
 
 ## MLFlow - Modeltracking
-Builds the container for the mlflow instance which is used for the model tracking. 
+- Builds the container for the mlflow instance which is used for the model tracking. 
 <details>
 <summary>MLFlow Dockerfile</summary>
 
@@ -128,7 +128,7 @@ CMD ["mlflow", "server", "--backend-store-uri", "/mlflow/mlruns", "--default-art
 ---
 
 ## Cronjob Implementation
-Builds the container for the mlflow instance which is used for the model tracking. 
+- Builds the container for the mlflow instance which is used for the model tracking. 
 <details>
 <summary>Cronjob Dockerfile</summary>
 
