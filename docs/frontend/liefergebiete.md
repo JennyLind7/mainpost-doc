@@ -6,7 +6,7 @@ The table is paginated, which means that only a limited number of data records a
 
 ![District List](district-index.png)
 
-[<i class="fas fa-folder"></i> Check out our vue.js DistrictList component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Districts/index/DistrictList.vue)
+[<i class="fas fa-folder"></i> Check out our vue.js DistrictList component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Districts/index/DistrictList.vue){:target="_blank"}
 
 ---
 
@@ -18,7 +18,7 @@ The page displays detailed information about a specific district, including name
 
 ![District List](district-detail.png)
 
-[<i class="fas fa-folder"></i> Check out our vue.js DistrictDetail component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Districts/show/DistrictDetail.vue)
+[<i class="fas fa-folder"></i> Check out our vue.js DistrictDetail component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Districts/show/DistrictDetail.vue){:target="_blank"}
 
 ---
 
@@ -26,7 +26,6 @@ The page displays detailed information about a specific district, including name
 
 <details open>
 <summary>Database query district information</summary>
-
 ```
 ## get all districts between index > startNumber & index < endNumber
 async function getAllDistricts(startNumber, endNumber)

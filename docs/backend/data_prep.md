@@ -3,7 +3,7 @@ The data we worked with was made available in csv files.
 <br>
 <br>
 A central directory of our application contains essential pre-processing files as well as the implemented connectors for the Supabase database and the weather API. These files play a crucial role in the processing and integration of the data provided.
-These files can be found in the [data_scripts](https://github.com/UHPDome/backend_mainpost/tree/main/development/src/data_scripts) subfolder of the src directory.
+These files can be found in the [data_scripts](https://github.com/UHPDome/backend_mainpost/tree/main/development/src/data_scripts){:target="_blank"} subfolder of the src directory.
 
 
 ## Database Connector

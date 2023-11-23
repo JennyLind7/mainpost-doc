@@ -48,7 +48,6 @@ nav:
     - Database model: data/databaseModel.md
   - Services:
     - Further services: externalServices/servicesWebApp.md
-    - Services Modelling: externalServices/optuna.md
   - Web Application:
     - Landing Page: frontend/landingpage.md
     - Login: frontend/login.md

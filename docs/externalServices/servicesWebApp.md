@@ -6,30 +6,7 @@
      FullCalendar is a powerful JavaScript library used to create and display interactive calendars and event planners in web applications. This library allows to integrate appealing and user-friendly calendar views into their web applications. FullCalendar is particularly useful for applications that need to manage appointments, events and schedules.
     </div>    
 </div>
-<br>
-
-<details>
-  <summary>Klicken Sie hier, um den Code anzuzeigen</summary>
-  <pre><code>
-    import FullCalendar from '@fullcalendar/vue3'
-    import dayGridPlugin from '@fullcalendar/daygrid'
-    interactionPlugin from '@fullcalendar/interaction'
-
-    export default {
-      components: {
-        FullCalendar // make the <FullCalendar> tag available
-      },
-      data() {
-        return {
-          calendarOptions: {
-            plugins: [dayGridPlugin, interactionPlugin],
-            initialView: 'dayGridMonth'
-          }
-        }
-      }
-    }
-  </code></pre>
-</details>
+[<i class="fas fa-folder"></i> Check out our vue.js Calendar components](https://github.com/UHPDome/backend_mainpost/tree/main/frontend/src/components/SubComponents/Calendar){:target="_blank"}
 
 ## Mapbox
 
@@ -41,11 +18,24 @@
       <br>
        Mapbox is a company that provides map services and geospatial tools. It enables developers to integrate custom maps and location services into their applications. Mapbox can be used to create interactive maps, geodata visualisation, location search, route planning and geographic analysis in a variety of applications and websites.
        <br>
-       <br>
        To be able to include Mapbox in our Vue.js frontend, the Mapbox-Gl-JS library was added. 
     </div>
 </div>
-<br>
+<details open>
+<summary>Implementation of Mapbox in our application</summary>
+
+```
+import mapboxgl from 'mapbox-gl';
+const token = process.env.VUE_APP_MAPBOX_API_TOKEN
+mapboxgl.accessToken = token; 
+// console.log('Token:', token);
+
+export default mapboxgl;
+
+```
+</details>
+[<i class="fas fa-folder"></i> Check out our vue.js Map component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/SubComponents/Map/MapComponent.vue){:target="_blank"}
+
 
 ## OpenweatherMap
 
@@ -59,10 +49,13 @@
     </div>
 </div>
 Following api queries to extract weather information from openweathermap have been executed:
+<details open>
+<summary>Loading weather information for specific area</summary>
 ```
 ## get weather information for next five days of specified area
 async function getWeatherData(area_id)
 ```
+</details>
 <details>
 <summary>View our weatherService.js</summary>
 
@@ -126,6 +119,5 @@ function getLocationCenter(area_id) {
 </details>
 
 
-### Weather data in forecast models
 
 
