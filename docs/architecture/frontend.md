@@ -1,8 +1,4 @@
 # <i class="fas fa-desktop"></i> Frontend
-
-## Service Design Pattern
-<span style="color: red;">Grafik service Software Design Pattern</span>
-
 ## Vue.js Application
 
 ![Logo Vue.js](vue_logo.png){ align=right }
@@ -28,3 +24,8 @@ After consultation with the project partner, we decided in favour of vue.js as t
 - <span style="background-color: #0284c7;">**Routing**</span>: Vue Router is an official extension to Vue.js that simplifies the creation of single-page applications with client-side routing functionality.
 <br>
 - <span style="background-color: #0284c7;">**Tools and ecosystem**</span>: Vue.js has an active and growing community. There are numerous extensions, plugins, and tools that facilitate the development and debugging of Vue.js applications.
+<br>
+<br>
+<div>The following image shows the dashboard of our application we created with Vue.js.</div>
+
+![Application Dashboard](dashboard-big.png)

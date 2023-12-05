@@ -1,10 +1,13 @@
 # <i class="fab fa-docker"></i> Docker Setup
+
+<span style="color: red;">Bild Docker Setup</span>
+
 ## Vuejs - Frontend
 <span style="margin-left:20px;">Right now in docker compose the dev dockerfile gets executed.</span>
 
 ### Dockerfile for dev
 - Builds the container for the frontend application. 
-<details>
+<details open>
 <summary>Frontend Dockerfile</summary>
 
 ```
@@ -182,4 +185,4 @@ ENTRYPOINT ["cron", "-f"]
 
 ---
 
-<i class="fas fa-folder"></i> The Dockerfiles can also be found in the [/docker directory](https://github.com/UHPDome/backend_mainpost/tree/main/docker). 
+<i class="fas fa-folder"></i> Our Dockerfiles can be found in the [/docker directory](https://github.com/UHPDome/backend_mainpost/tree/main/docker){:target="_blank"}. 

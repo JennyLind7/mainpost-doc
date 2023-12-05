@@ -1,7 +1,7 @@
 # <i class="fas fa-wrench"></i>  Installation
 
-<i class="fab fa-docker" style="margin-left:20px;"></i> <span style="margin-left:20px;">Install Docker on your system</span><br>
-<i class="fab fa-github" style="margin-left:20px;"></i> <span style="margin-left:20px;">You need a GitHub account</span>
+<i class="fab fa-docker" style="margin-left:20px;"></i><span style="margin-left:20px;">Install Docker on your system</span><br>
+<i class="fab fa-github" style="margin-left:20px;"></i><span style="margin-left:20px;">You need a GitHub account</span>
 
 
 ## Project Setup
@@ -10,7 +10,7 @@
 
 <span style="margin-left:20px;">Clone our Github Repository:</span>
 
-<details>
+<details open>
 <summary>HTTPS</summary>
 
 ```
@@ -36,7 +36,8 @@ git clone git@github.com:UHPDome/backend_mainpost.git
 VUE_APP_SUPABASE_KEY=value
 VUE_APP_MAPBOX_API_TOKEN=value
 ```
-<span style="margin-left:20px;">The corresponding file can also be found in [/frontend](https://github.com/UHPDome/backend_mainpost/tree/main/frontend)</span>
+<span style="margin-left:20px;">The corresponding file can also be found in <a href="https://github.com/UHPDome/backend_mainpost/tree/main/frontend" target="_blank">/frontend</a></span>
+
 
 --- 
 ### Project directory
@@ -55,7 +56,7 @@ docker-compose up
 
 ### docker-compose.yml
 
-<details>
+<details open>
 <summary>Edit setup in docker-compose.yml file</summary>
 
 ```
@@ -102,6 +103,7 @@ services:
 
 ```
 </details>
+
 
 
 

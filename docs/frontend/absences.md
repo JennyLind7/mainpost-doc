@@ -1,4 +1,4 @@
-# <i class="fas fa-calendar"></i> Abwesenheitserfassung 
+# <i class="fas fa-calendar"></i> Absence Registration 
 
 This component provides a user-friendly interface for recording information on future absences or substitutions.
 <br>
@@ -13,7 +13,7 @@ The form is submitted using the *createFutureVacancy* method from the *replaceme
 <br>
 ![Absence detection](abwesenheit.png)
 
-[<i class="fas fa-folder"></i> Check out our vue.js VacancyDetection component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Absences/VacancyDetection.vue)
+[<i class="fas fa-folder"></i> Check out our vue.js VacancyDetection component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Absences/VacancyDetection.vue){:target="_blank"}
 
 ---
 

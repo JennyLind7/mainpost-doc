@@ -1,4 +1,4 @@
-# <i class="fas fa-user"></i> Mitarbeiter 
+# <i class="fas fa-user"></i> Employees
 ## Employee List
 The page provides an overview of employee statistics, including the number of active employees, the proportion of full-time employees and other relevant key figures. 
 <br>
@@ -6,7 +6,7 @@ The main view shows two bar charts that visualise the distribution of employees 
 
 ![Mitarbeiter](employee-index.png)
 
-[<i class="fas fa-folder"></i> Check out our vue.js EmployeeList component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Employees/index/EmployeeList.vue)
+[<i class="fas fa-folder"></i> Check out our vue.js EmployeeList component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Employees/index/EmployeeList.vue){:target="_blank"}
 
 ---
 
@@ -21,7 +21,7 @@ In addition, there is a table that lists the employee's absences (holiday or ill
 ![Mitarbeiter](employee-detail.png)
 
 
-[<i class="fas fa-folder"></i> Check out our vue.js EmployeeDetail component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Employees/show/EmployeeDetail.vue)
+[<i class="fas fa-folder"></i> Check out our vue.js EmployeeDetail component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Employees/show/EmployeeDetail.vue){:target="_blank"}
 
 ---
 

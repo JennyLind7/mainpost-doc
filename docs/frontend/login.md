@@ -1,5 +1,5 @@
 # <i class="fas fa-lock"></i>  Login
-After all container are started, you can login to the application on [Netlify](https://mainpost-projektseminar.netlify.app/). Login with you credentials. Your username is the first letter of the name and the full surename.
+After all container are started, you can login to the application on [Netlify](https://mainpost-projektseminar.netlify.app/){:target="_blank"}. Login with you credentials. Your username is the first letter of the name and the full surename.
 <br>
 <br>
 
@@ -8,7 +8,7 @@ After all container are started, you can login to the application on [Netlify](h
 The login process is performed using the loginWithSupabase method, which uses the Supabase authentication services and redirects to the /dashboard page if the login is successful.
 
 
-[<i class="fas fa-folder"></i> Check out our vue.js LoginComponent component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Authentification/Login/LoginComponent.vue)
+[<i class="fas fa-folder"></i> Check out our vue.js LoginComponent component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Authentification/Login/LoginComponent.vue){:target="_blank"}
 
 ---
 **The following queries were executed to extract authentification information:**

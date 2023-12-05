@@ -1,61 +1,46 @@
+
 # Multiple time series analysis for Main-Post employee outages
 
-<img src="postbote.png" alt="Postbote" style="max-width: 200px; float: left; margin-right: 20px;">
-<div style="display: flex; align-items: center;">
-    <div style="flex: 8;">
-       Postal delivery staff are the backbone of logistics over the last mile. However, due to the increased volume of consignments, changing weather conditions and the often high workload, postal delivery staff are disproportionately affected by sick days and days lost. In cooperation with the Main-Post media group, a data-supported tool for analysing absences was developed.
-    </div>
+Postal carriers are the backbone of last-mile logistics. However, due to the increased volume of deliveries, changing weather conditions and the often high workload, postal carriers are significantly affected by sick days and absences. In collaboration with the Main-Post media group, we have developed a data-driven tool for analysing and predicting absences.
+<br>
+Our application makes it possible to predict the cancellations of the Main-Post delivery staff. To do this, historical cancellations as well as historical and future weather data are taken into account. The optimisation framework can also be used to determine the best possible replacement for missing employees.
+<br>
+<br>
+**The following visualisation gives an overview of the functionalities of our application:**
+<br>
+![Application Overview](application_overview.png)
+<br>
+<br>
+The objective of this project documentation is to provide an overview of our application as well as a deeper insight into the structure of the application. This documentation explains the tools and technologies used and how we technically implemented the individual components. 
+<br>
+<br>
+**Our project documentation consists of the following components:**
+<br>
+<div style="display: flex; justify-content: space-between;">
+    <figure>
+        <a href="/projectSetup/installation/"><img src="set-up.png" alt="Overview"></a>
+        <figcaption>Project Setup</figcaption>
+    </figure>
+    <figure>
+        <a href="/architecture/overview/"><img src="architecture.png" alt="Architecture"></a>
+        <figcaption>Architecture</figcaption>
+    </figure>
+    <figure>
+        <a href="/data/overview_data/"><img src="data.png" alt="Data"></a>
+        <figcaption>Data Overview</figcaption>
+    </figure>
+    <figure>
+        <a href="/externalServices/servicesWebApp/"><img src="services.png" alt="Services"></a>
+        <figcaption>Services</figcaption>
+    </figure>
+    <figure>
+        <a href="/frontend/landingpage/"><img src="web_application.png" alt="Web Application"></a>
+        <figcaption>Web Application</figcaption>
+    </figure>
+    <figure>
+        <a href="/backend/data_prep/"><img src="backend.png" alt="Backend"></a>
+        <figcaption>Backend</figcaption>
+    </figure>
 </div>
-<br>
-<br>
-<br>
-<br>
-The application makes it possible to predict the cancellations of the Main-Post delivery staff. To do this, historical cancellations as well as historical and future weather data are taken into account. The optimisation framework can also be used to determine the best possible replacement for missing employees.
-<br>
-<br>
-
-<details open>
-  <summary>Vue.js Web Application </summary>
-  <div class="info-box">
-    <img src="vue_logo_index.png" alt="GitHub Repositories">
-    <div class="info-box-content">
-      <ul>
-          <li>
-            <a href="https://mainpost-projektseminar.netlify.app" target="_blank">
-              Vue.js Web Application
-            </a>
-          </li>
-        </ul>
-    </div>
-  </div>
-</details>
-
-<details open>
-  <summary>GitHub Repositories</summary>
-  <div class="info-box">
-    <img src="github-mark.png" alt="GitHub Repositories">
-    <div class="info-box-content">
-      <ul>
-        <li>
-          <a href="https://github.com/SimonUnterlugauer/dockerized_mainpost_frontend" target="_blank">
-            Frontend GitHub Repository
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/IhrBenutzername/backend" target="_blank">
-            Backend GitHub Repository
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</details>
-
-
-
-
-
-
-
 
 

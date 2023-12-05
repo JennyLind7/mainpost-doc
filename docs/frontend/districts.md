@@ -1,4 +1,4 @@
-# <i class="fas fa-truck"></i> Liefergebiete
+# <i class="fas fa-truck"></i> Districts
 ## District List
 
 This page provides the user with a table containing information on various districts. Each record in the table represents a district with corresponding details. The "Ansehen" button takes the user to a detailed view of a specific district.

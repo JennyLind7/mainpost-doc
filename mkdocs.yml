@@ -52,11 +52,11 @@ nav:
     - Landing Page: frontend/landingpage.md
     - Login: frontend/login.md
     - Dashboard: frontend/dashboard.md
-    - Liefergebiete: frontend/liefergebiete.md
-    - Mitarbeiter: frontend/mitarbeiter.md
-    - Abwesenheitserfassung: frontend/abwesenheit.md
-    - Historisches: frontend/historisches.md
-    - Planung: frontend/planung.md
+    - Districts: frontend/districts.md
+    - Employees: frontend/employees.md
+    - Absence Registration: frontend/absences.md
+    - Historical: frontend/historical.md
+    - Planning: frontend/planning.md
   - Backend:
     - Data Preparation: backend/data_prep.md
     - Models: backend/models.md

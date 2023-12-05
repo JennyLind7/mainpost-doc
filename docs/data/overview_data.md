@@ -1,8 +1,5 @@
-<span style="color: red;">Todo:<br>
-- Daten alphabetisch ordnen <br>
-- Checken auf Vollständigkeit
-</span>
-<details class="custom-details">
+Here you will find an overview of the data and its types provided by Mainpost to realise this project. 
+<details class="custom-details" open>
   <summary>Abscences</summary>
   Absences reflect person-related absences such as sickness and holidays.
   <table>
@@ -139,76 +136,6 @@
         <td>deposition_street</td>
         <td>text</td>
         <td>Deposit location where the newspapers/letters are collected by the deliverer</td>
-      </tr>
-    </tbody>
-  </table>
-</details>
-
-<details class="custom-details">
-  <summary>Rounds</summary>
-  <table>
-    <thead>
-      <tr>
-        <th>Feature</th>
-        <th>DataType</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>id</td>
-        <td>bigint</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>code</td>
-        <td>text</td>
-        <td>BMZ = Newspapers, BMB = Letters, for districts beginning with ZB 1 = Newspapers, 4 = Letter</td>
-      </tr>
-      <tr>
-        <td>start_date</td>
-        <td>text</td>
-        <td>Start of the round</td>
-      </tr>
-      <tr>
-        <td>end_date</td>
-        <td>text</td>
-        <td>End of the round</td>
-      </tr>
-      <tr>
-        <td>monday</td>
-        <td>boolean</td>
-        <td>Whether the round was played on the day</td>
-      </tr>
-      <tr>
-        <td>tuesday</td>
-        <td>boolean</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>wednesday</td>
-        <td>boolean</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>thursday</td>
-        <td>boolean</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>friday</td>
-        <td>boolean</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>saturday</td>
-        <td>boolean</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>sunday</td>
-        <td>boolean</td>
-        <td></td>
       </tr>
     </tbody>
   </table>
@@ -491,6 +418,75 @@
   </table>
 </details>
 
+<details class="custom-details">
+  <summary>Rounds</summary>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>DataType</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>id</td>
+        <td>bigint</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>code</td>
+        <td>text</td>
+        <td>BMZ = Newspapers, BMB = Letters, for districts beginning with ZB 1 = Newspapers, 4 = Letter</td>
+      </tr>
+      <tr>
+        <td>start_date</td>
+        <td>text</td>
+        <td>Start of the round</td>
+      </tr>
+      <tr>
+        <td>end_date</td>
+        <td>text</td>
+        <td>End of the round</td>
+      </tr>
+      <tr>
+        <td>monday</td>
+        <td>boolean</td>
+        <td>Whether the round was played on the day</td>
+      </tr>
+      <tr>
+        <td>tuesday</td>
+        <td>boolean</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>wednesday</td>
+        <td>boolean</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>thursday</td>
+        <td>boolean</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>friday</td>
+        <td>boolean</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>saturday</td>
+        <td>boolean</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>sunday</td>
+        <td>boolean</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 <details class="custom-details">
   <summary>Vacancies</summary>
