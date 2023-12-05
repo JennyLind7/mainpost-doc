@@ -18,27 +18,27 @@ The objective of this project documentation is to provide an overview of our app
 <br>
 <div style="display: flex; justify-content: space-between;">
     <figure>
-        <a href="/projectSetup/installation/"><img src="set-up.png" alt="Overview"></a>
+        <a href="/mainpost-doc/projectSetup/installation/"><img src="set-up.png" alt="Overview"></a>
         <figcaption>Project Setup</figcaption>
     </figure>
     <figure>
-        <a href="/architecture/overview/"><img src="architecture.png" alt="Architecture"></a>
+        <a href="/mainpost-doc/architecture/overview/"><img src="architecture.png" alt="Architecture"></a>
         <figcaption>Architecture</figcaption>
     </figure>
     <figure>
-        <a href="/data/overview_data/"><img src="data.png" alt="Data"></a>
+        <a href="/mainpost-doc/data/overview_data/"><img src="data.png" alt="Data"></a>
         <figcaption>Data Overview</figcaption>
     </figure>
     <figure>
-        <a href="/externalServices/servicesWebApp/"><img src="services.png" alt="Services"></a>
+        <a href="/mainpost-doc/externalServices/servicesWebApp/"><img src="services.png" alt="Services"></a>
         <figcaption>Services</figcaption>
     </figure>
     <figure>
-        <a href="/frontend/landingpage/"><img src="web_application.png" alt="Web Application"></a>
+        <a href="/mainpost-doc/frontend/landingpage/"><img src="web_application.png" alt="Web Application"></a>
         <figcaption>Web Application</figcaption>
     </figure>
     <figure>
-        <a href="/backend/data_prep/"><img src="backend.png" alt="Backend"></a>
+        <a href="/mainpost-doc/backend/data_prep/"><img src="backend.png" alt="Backend"></a>
         <figcaption>Backend</figcaption>
     </figure>
 </div>
