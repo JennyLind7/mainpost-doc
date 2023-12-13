@@ -13,6 +13,11 @@ This script provides functions for interacting with our Supabase database. The f
 <summary>supabase_connector.py</summary>
 
 ```
+"""This script contains functions to connect to supabase. 
+
+They contain functionality for loading from supabase, inserting into supabase and updating data in supabase
+"""
+
 import os 
 from dotenv import load_dotenv
 from supabase import create_client, Client
@@ -26,12 +31,8 @@ key: str = os.environ.get("SUPABASE_KEY")
 supabase: Client = create_client(url, key)
 
 #@retry(delay=5, tries=6)
-def load_dataframe(name):
-    """
-    takes name of supabase table as string
-    loads the table from supabase
-    returns the table as dataframe
-    """
+def load_dataframe(name: str) -> pd.DataFrame:
+    """Load table from supabase by name and transform to pandas dataframe"""
     data = supabase.table(name).select("*").execute()
     data_json = data.model_dump_json()
     data_json = json.loads(data_json)
@@ -40,31 +41,23 @@ def load_dataframe(name):
         df['date'] = pd.to_datetime(df['date'])
     return df
 
-def load_dataframe_latest(name):
-    """
-    loads the latest entry of a supabase table to cut waiting time
-    """
+def load_dataframe_latest(name: str) -> pd.DataFrame:
+    """Load the latest entry of a supabase table to cut waiting time"""
     data, count = supabase.table(name).select('*').order('date', desc=True).limit(1).execute()
     df = pd.DataFrame(data[1])
     if 'date' in df.columns:
         df['date'] = pd.to_datetime(df['date'])
     return df
 
-def insert_supabase(name, df):
-    """
-    takes name of supabase table as string and dataframe
-    inserts the dataframe into the supabase table
-    """
+def insert_supabase(name: str, df: pd.DataFrame) -> None:
+    """inserts the dataframe into the supabase table"""
     df_json = df.to_json(orient='records')
     df_json = json.loads(df_json)
     data = supabase.table(name).insert(df_json).execute()
     
 
-def update_supabase(name, df):
-    """
-    takes name of supabase table as string and dataframe
-    updates the supabase table with the dataframe
-    """
+def update_supabase(name: str, df: pd.DataFrame) -> None:
+    """Update the supabase table with the Dataframe."""
     data = supabase.table("countries").update({"country": "Indonesia", "capital_city": "Jakarta"}).eq("id", 1).execute()
 
 ```
@@ -77,6 +70,15 @@ This script retrieves weather data from the Visual Crossing Weather API and inte
 <summary>crossingweather_connector.py</summary>
 
 ```
+"""This file contains functions to load weather data from Visual Crossing Weather API and transform it.
+
+There is the option to load 15 day forecast data or history data for a given daterange.
+The data is transformed afterwards in different steps:
+    1. one-hot encoding of weather conditions
+    2. join non intersecting columns of weather and covariates dataframe
+    3. add area_id and reason to the covariates dataframe
+"""
+
 import os
 import pandas as pd
 import csv
@@ -95,26 +97,25 @@ ApiKey: str = os.environ.get("VISUALCROSSING_KEY")
 QueryLocation = '&location=' + 'Wuerzburg,Germany'
 QueryKey = '&key=' + ApiKey
 
-def _load_dataframe(StartDate='', EndDate=''):
-    """
-    takes in a start and end date as string
-    loads weather data from Visual Crossing Weather API
-    if no start and end date is given, loads 15 day forecast data
-    returns the weather data as dataframe
+def _load_dataframe(StartDate: str = '', EndDate: str = ''):
+    """Load weather data from Visual Crossing Weather API.
+
+    If no start and end date is given, loads 15 day forecast data.
+    Returns the weather data as Dataframe.
     """
 
-    Params = '&aggregateHours=24&unitGroup=metric'#&contentType=json'
+    Params: str = '&aggregateHours=24&unitGroup=metric'#&contentType=json'
     
     if len(StartDate)>0:
         print(' - Fetching history for date: ', StartDate,'-',EndDate)
 
         # History requests require a date.  We use the same date for start and end since we only want to query a single date in this example
-        QueryDate = '&startDateTime=' + StartDate + 'T00:00:00&endDateTime=' +EndDate + 'T00:00:00'
-        QueryTypeParams = 'history?'+ Params + '&dayStartTime=0:0:00&dayEndTime=0:0:00' + QueryDate
+        QueryDate: str = '&startDateTime=' + StartDate + 'T00:00:00&endDateTime=' +EndDate + 'T00:00:00'
+        QueryTypeParams: str = 'history?'+ Params + '&dayStartTime=0:0:00&dayEndTime=0:0:00' + QueryDate
     
     else:
         print(' - Fetching forecast data')
-        QueryTypeParams = 'forecast?'+ Params + '&shortColumnNames=false'
+        QueryTypeParams: str = 'forecast?'+ Params + '&shortColumnNames=false'
 
     # Build the entire query
     URL = BaseURL + QueryTypeParams + QueryLocation + QueryKey
@@ -142,12 +143,11 @@ def _load_dataframe(StartDate='', EndDate=''):
 
     return df
 
-def _get_transform_weather(startdate, enddate):
-    """
-    takes in a start and end date as string
-    calls _load_dataframe to load weather data
-    transforms the weather data by one-hot encoding weather conditions
-    returns the transformed weather data as dataframe
+def _get_transform_weather(startdate: str, enddate: str) -> pd.DataFrame:
+    """Load and Transform weather data.
+    
+    Call _load_dataframe and load weather data.
+    Transform weather data by one-hot encoding weather conditions and keeping necessary columns.
     """
     if startdate > enddate:
         past_df = _load_dataframe()
@@ -159,13 +159,11 @@ def _get_transform_weather(startdate, enddate):
     past_df = pd.get_dummies(past_df, columns = ['conditions'], prefix='', prefix_sep='', dtype=int)
     return past_df
 
-def _get_non_intersect_columns(weather_df, covariates_df):
-    """
-    takes in weather and covariates dataframe
-    gets the non intersecting columns of weather and covariates dataframe
-    joins the non intersecting columns to the weather dataframe and fills with 0 
-    required for the model to function
-    returns the resulting dataframe
+def _get_non_intersect_columns(weather_df: pd.DataFrame, covariates_df: pd.DataFrame) -> pd.DataFrame:
+    """Get the non intersecting columns of weather and covariates dataframe to create a complete Table.
+
+    The columns from the initial covariates table cover all the weather conditions and thus are used to extent the current covariates table that usually only contains a few conditions (e.g. rain, snow, fog).
+    The non intersecting column are joined to the weather dataframe and are filled with 0s. 
     """
     intersect_cols = set(weather_df.columns).intersection(set(covariates_df.columns))
     non_intersect_cols = [col for col in covariates_df.columns if col not in intersect_cols]
@@ -175,12 +173,8 @@ def _get_non_intersect_columns(weather_df, covariates_df):
     covariates_return['date'] = pd.to_datetime(covariates_return['date'])
     return covariates_return
 
-def _add_reason_id(noint, covariates):
-    """
-    takes in the non intersecting dataframe and the covariates dataframe
-    adds the area_id and reason to the covariates dataframe
-    returns the covariates dataframe for every area and reason
-    """
+def _add_reason_id(noint:pd.DataFrame, covariates: pd.DataFrame) -> pd.DataFrame:
+    """Add the area_id and reason to the covariates Dataframe."""
 
     noint_reason = pd.DataFrame()
 
@@ -201,12 +195,11 @@ def _add_reason_id(noint, covariates):
     
     return noint_reason_area
     
-def get_weather_data(covariates, StartDate='', EndDate=''):
-    """
-    takes in the covariates dataframe and a start and end date as string
-    calls above functions to load and transform the weather data
-    returns the transformed covariates data
-    """
+def get_weather_data(
+        covariates: pd.DataFrame, 
+        StartDate: str = '', 
+        EndDate: str = '') -> pd.DataFrame:
+    """Calls above functions to load and transform the weather data."""
     weather_df = _get_transform_weather(StartDate, EndDate)
     no_int = _get_non_intersect_columns(weather_df, covariates)
     noint_reason_area =_add_reason_id(no_int, covariates)
@@ -222,15 +215,23 @@ This script processes and transforms absence data by assigning it to an area (di
 <summary>preprocess_absences.py</summary>
 
 ```
+"""This script loads and transforms the absences data.
+
+This is a multistep process:
+    1. Transpose to daily data per row instead of ranges in columns.
+    2. Join area_id and reason to the absences
+    3. Sum up absences per day, area_id and reason
+    4. Fill Dataframe with 0 for days where there are no absences
+
+The resulting data is used to train the timeseries forecasting model and contains the prediction variable.
+The file is only needed for initalization of the supabase table for absences.
+"""
+
 import pandas as pd
 import data_scripts.supabase_connector as supabase_connector
 
-def _join_bezirk_to_absences(df):
-    """
-    Joins the area_id to the absences
-    takes in a dataframe
-    returns the joined dataframe
-    """
+def _join_bezirk_to_absences(df: pd.DataFrame) -> pd.DataFrame:
+    """Join area_id to the absences"""
     allocations_df = supabase_connector.load_dataframe("allocations")
     allocations_df.rename(columns={'id':'allocation_id'}, inplace=True)
     rounds_df = supabase_connector.load_dataframe("districts")
@@ -241,12 +242,11 @@ def _join_bezirk_to_absences(df):
     df = df.merge(bezirk_df, how='left', left_on='allocation_id', right_on='allocation_id')
     return df
 
-def load_and_preprocess_absences():
-    """
-    Loads the absences data and transposes it to daily data instead of ranges 
-    calls above functions to join the area_id to the absences
-    saves the transformed dataframe
-    returns the transformed dataframe
+def load_and_preprocess_absences() -> pd.DataFrame:
+    """Load absences data and transpose to daily data instead of ranges.
+    
+    Transposition is done with a list comprehension that is significantly faster then other tested methods (for loops f.e.).
+    Call _join_bezirk_to_absences to join the area_id to the absences.
     """
     absences_df = supabase_connector.load_dataframe("absences")
     absences_df = absences_df.dropna(subset=['start_date', 'end_date'])
@@ -260,26 +260,19 @@ def load_and_preprocess_absences():
     absences_df['date'] = pd.to_datetime(absences_df['date'])
 
     absences_df = _join_bezirk_to_absences(absences_df)
-
-    #absences_df.to_csv('../data/interim/absences_daily.csv', index=False)
     
     return absences_df
 
-def _sum_df(df):
-    """
-    Sums the absences per day, area_id and reason
-    takes in a dataframe
-    returns the summed dataframe"""
+def _sum_df(df: pd.DataFrame) -> pd.DataFrame:
+    """Sum up absences per day, area_id and reason."""
     df = df.drop(columns=['employee_id', 'allocation_id', 'id', 'district_id'])
-    #df = df.groupby(['date']).sum().reset_index()
     df = df.groupby(['area_id','date', 'reason']).sum().sort_values('date').reset_index()
     return df
 
-def _fill_data(DataFrame):  
-    """
-    Fills the dataframe with 0 for days where there are no absences for every area_id and reason
-    takes in a dataframe
-    returns the filled dataframe
+def _fill_data(DataFrame: pd.DataFrame) -> pd.DataFrame:  
+    """Fill absence Dataframe with 0 for days where there are no absences.
+
+    This is important for the timeseries forecasting models with darts, because the every timeseries of the multiple timeseries need to have the same length.
     """
     DataFrame_filled = DataFrame.copy()
     for area_id in DataFrame['area_id'].unique():
@@ -298,14 +291,13 @@ def _fill_data(DataFrame):
     DataFrame_filled = DataFrame_filled.reset_index(drop=True)
     return DataFrame_filled
 
-def transform_absences(absences_df):
+def transform_absences(absences_df: pd.DataFrame) -> pd.DataFrame:
+    """Transform and save absences data.
+
+    This function calls above functions and thus functions as a datapipeline with minimal transformations added.
+    That is the exclution of the area_id 2.6 Z&S and 2.8 Z&S. 
     """
-    Transforms the absences data and saves it, by calling above functions
-    loads from interim data and saves to processed data
-    excludes the area_id 2.6 Z&S and 2.8 Z&S due to issues with darts
-    """
-    
-    #drop non float old area_id due to issues with darts
+    absences_df = load_and_preprocess_absences()
     absences_df = absences_df[absences_df.area_id != '2.6 Z&S']
     absences_df = absences_df[absences_df.area_id != '2.8 Z&S']
     absences_df = absences_df.reset_index(drop=True)   
@@ -315,52 +307,7 @@ def transform_absences(absences_df):
     absences_complete = _fill_data(absences_complete)
 
     absences_complete.to_csv('../data/processed/absences_daily_multiple_m_reason.csv', index=False)
-    #return absences_complete, absences_vacation, absences_illness
-
-#only fill for area id not accounting for reason
-
-#def _fill_data(DataFrame):
-#    DataFrame_filled = DataFrame.copy()
-#    for area_id in DataFrame['area_id'].unique():
-#        DataFrame_Slice = DataFrame[DataFrame['area_id']==area_id]
-#        Bool_Series = pd.DataFrame({'date':DataFrame['date'].unique()})
-#        Bool_Series['isinbool'] = pd.DataFrame(DataFrame['date'].unique()).isin(DataFrame_Slice['date'].unique())
-#        Bool_Series = Bool_Series[Bool_Series['isinbool']==False]
-#        Bool_Series['count'] = 0
-#        Bool_Series['area_id'] = area_id
-#        Bool_Series=Bool_Series.drop(['isinbool'], axis=1)
-#        DataFrame_filled = pd.concat([DataFrame_filled, Bool_Series])
-#
-#    DataFrame_filled = DataFrame_filled.reset_index(drop=True)
-#    return DataFrame_filled
-
-
-#def transform_absences():
-#    absences_df = pd.read_csv('../../data/interim/absences_daily.csv')
-#    
-#    #drop non float old area_id due to issues with darts
-#    absences_df = absences_df[absences_df.area_id != '2.6 Z&S']
-#    absences_df = absences_df[absences_df.area_id != '2.8 Z&S']
-#    absences_df = absences_df.reset_index(drop=True)
-#    
-#    absences_df['count'] = 1
-#    absences_complete = absences_df
-#    absences_vacation = absences_df[absences_df['reason']=='vacation']
-#    absences_illness = absences_df[absences_df['reason']=='illness']
-#
-#    absences_complete = _sum_df(absences_complete)
-#    absences_complete = _fill_data(absences_complete)
-#
-#    absences_vacation = _sum_df(absences_vacation)
-#    absences_vacation = _fill_data(absences_vacation)
-#
-#    absences_illness = _sum_df(absences_illness)
-#    absences_illness = _fill_data(absences_illness)
-#
-#    absences_complete.to_csv('../../data/processed/absences_bezirk_complete.csv', index=False)
-#    absences_vacation.to_csv('../../data/processed/absences_bezirk_vacation.csv', index=False)
-#    absences_illness.to_csv('../../data/processed/absences_bezirk_illness.csv', index=False)
-#    #return absences_complete, absences_vacation, absences_illness
+    
 
 ```
 </details>
@@ -372,15 +319,20 @@ This script processes time series data to forecast absences. The function create
 <summary>build_covariates.py</summary>
 
 ```
+"""This script is used to build the covariates for training the timeseries forecasting model.
+
+It contains code that transforms the external weather data and joins it to the area and reason specific internal data.
+Is only needed for inital transformation of the external weatherdata, to initialize the supabase table for covariates.
+"""
+
 import pandas as pd
 import data_scripts.supabase_connector as supabase_connector
 
-def create_datetime_features(df):
-    """
-    Creates time series features from datetime index
-    Only needed for none darts testing purposes
-    takes in a dataframe
-    returns the dataframe with additional time series features
+def create_datetime_features(df: pd.DataFrame) -> pd.DataFrame:
+    """Create time series features from datetime index.
+
+    Only needed for none darts testing purposes.
+    Returns the dataframe with additional time series features.
     """
     df['dayofweek'] = df['date'].dt.dayofweek
     df['quarter'] = df['date'].dt.quarter
@@ -392,13 +344,11 @@ def create_datetime_features(df):
     return df
 
 
-def _transform_save_weather(df, name):
-    """
-    Transforms and saves weather data, by one-hot encoding weather conditions
-    takes in a dataframe and the name for the file to save
-    saves the transformed dataframe
-    was only needed for initial transformation and save of the external weather data
-    returns the transformed dataframe
+def _transform_save_weather(df: pd.DataFrame, name: str) -> pd.DataFrame:
+    """Transform and save weather data.
+     
+    Use one-hot encoding for weather conditions.
+    Save the transformed dataframe by given name to csv.
     """
     df['date'] = df['datetime']
     df = df.drop(columns=['datetime'])
@@ -407,12 +357,8 @@ def _transform_save_weather(df, name):
     df.to_csv(f'../data/processed/{name}.csv', index=False)
     return df
 
-def _join_id_reason_to_covariates(covariates):
-    """
-    joins the area_id and reason to the covariates dataframe
-    takes in the covariates dataframe
-    returns the covariates dataframe for every area and reason
-    """
+def _join_id_reason_to_covariates(covariates: pd.DataFrame) -> pd.DataFrame:
+    """Join area_id and reason to the covariates Dataframe."""
     reason_df = pd.DataFrame()
     absences_df = supabase_connector.load_dataframe("absences_daily")
 
@@ -431,15 +377,15 @@ def _join_id_reason_to_covariates(covariates):
     
     return reason_df_area
 
-def load_and_preprocess_weather():
-    """
-    Loads the weather data and calls above functions to transform and save the data
-    returns the transformed dataframe
+def load_and_preprocess_weather() -> pd.DataFrame:
+    """Load Data and call above functions.
+
+    transforms and saves the weather data and returns the resulting Dataframe.
     """
     weather_past_df = pd.read_csv('../data/external/weather_df.csv', delimiter=',', parse_dates=['datetime'])
     weather_past_df = _transform_save_weather(weather_past_df, "covariates_past_single")
     weather_past_df = _join_id_reason_to_covariates(weather_past_df)
- 
+    weather_past_df.to_csv('../data/processed/covariates_past_multiple_m_reason.csv', index=False)
     return weather_past_df
 
 ```
@@ -452,6 +398,7 @@ This code updates the covariates table for the forecast of absences. Firstly, da
 <summary>update_covariates.py</summary>
 
 ```
+"""This script wraps the functions from crossingweather_connector and supabase_connector to update the covariates table."""
 import os
 import pandas as pd
 import json 
@@ -467,10 +414,8 @@ covariates = supabase_connector.load_dataframe("covariates")
 startdate= str(covariates['date'].max().date() + timedelta(days=1))
 enddate = str(date.today())
 
-def update_covariates():
-    """
-    calls functions from crossingweather_connector and supabase_connector to update the covariates table
-    """
+def update_covariates() -> None:
+    """call functions from crossingweather_connector and supabase_connector to update the covariates table"""
     if startdate > enddate:
         print('No new data available')
     else:

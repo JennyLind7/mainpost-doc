@@ -60,7 +60,6 @@ nav:
   - Backend:
     - Data Preparation: backend/data_prep.md
     - Models: backend/models.md
-    - Performance: backend/performance.md
     - Prediction: backend/prediction.md
 
 markdown_extensions:

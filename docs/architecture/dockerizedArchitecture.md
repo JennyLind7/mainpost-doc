@@ -1,6 +1,6 @@
 # <i class="fab fa-docker"></i>  Dockerized Application</i>
 
-Since the complexities in delivering our project, encompassing frontend, backend, model tracking, and a database, we have opted to virtualize all components of our application using Docker containerization technology. Our project comprises a total of 3 Docker containers, all deployable with the **docker-compose up** command. <br>
+Since the complexities in delivering our project, encompassing frontend, backend, model tracking, and a database, we have opted to containerize all components of our application using Docker containerization technology. Our project comprises a total of 4 Docker containers, all deployable with the **docker-compose up** command. <br>
 The default bindings are set to port 8080 for the frontend and 8000 for the backend, with the flexibility to adjust these fundamental settings using Docker-Compose and Dockerfile. 
 <br>
 Docker was particularly suitable for our project as it enables the individual application components to be isolated in special containers. This not only ensures portability across different environments, but also improves the reproducibility of our development setups. In addition, Docker streamlines scalability and deployment through container orchestration, enabling efficient resource utilisation and providing a comprehensive solution for the development, deployment and maintenance of our interconnected project.

@@ -87,14 +87,20 @@ In this final view of our web application, users can explore and analyse the per
 These models are predictions for weather-related employee shortages. 
 
 ### Feature Influence of the weather data
+Machine Learning models work often as black boxes making it challenging to understand the results and estimate their validity. To assess our outcomes were different approaches employed. One such method we utilized was the explanation technique called SHAP (Shapley Additive Explanations). SHAP Values enable the calculation of feature importance for each data observation within a Machine Learning model. Subsequently, a bee swarm plot illustrating the feature importance of weather data is presented. The total feature importance decreases from top to bottom. Consequently, we found that minimal temperature stands out as the weather variable with the highest impact. Higher values for this variable positively contribute to predictions, while lower values have a negative contribution.
+<br>
+<br>
 ![Feature Influence](performance.jpeg)
 
 ### Effect of the parameters on performance
+
 ![Effect on performance](lgbmplot.png)
 
 ### Probabilistic prediction
 The model performance is compared using Area_ID and the reason for failure as a probabilistic prediction. This means that we do not limit the predictions of the models to whether a failure will occur or not, but also analyse the probabilities for different reasons in different areas. 
 <br> <br>
 This probabilistic approach makes it possible to gain deeper insights into the predictive accuracy of the models both at the level of working areas (Area_ID) and on the basis of different reasons for failure. Through this analysis, patterns and trends can be identified that help to better understand the strengths and weaknesses of the models in different contexts and to make targeted optimisations.
+<br>
+This forecast displays the 90% quantile of predictions, indicating the likelihood of predictions falling within the correct range as seen in the example below.
 
 ![Found Replacements](probibalistic_forecast.png)

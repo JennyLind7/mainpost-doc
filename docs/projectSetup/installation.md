@@ -62,6 +62,19 @@ docker-compose up
 ```
 version: "3.9"
 services:
+  update_predictions:
+    container_name: 'dockerized-update-predictions'
+    build:
+      context: .
+      dockerfile: ./docker/development/Dockerfile.execute  
+    volumes:
+      - ./development/src:/code
+    depends_on: 
+      - mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=http://host.docker.internal:5001
+    #extra_hosts:
+    #  - "host.docker.internal:host-gateway"
   fastapi:
     build:
       context: .
@@ -69,7 +82,8 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./app:/app
+#      - ./app:/app
+      - .:/app
   mlflow:
     build:
       context: .
@@ -93,13 +107,17 @@ services:
       - /app/frontend/node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true
-  # cronjob:
-  #   container_name: 'dockerized-cronjob'
-  #   build:
-  #     context: .
-  #     dockerfile: ./docker/development/Dockerfile  # Verweisen Sie auf das oben gezeigte Dockerfile
-  #   ports:
-  #     - "7000:7001"
+  #cronjob:
+  #  container_name: 'dockerized-cronjob'
+  #  build:
+  #    context: .
+  #    dockerfile: ./docker/development/Dockerfile  # Verweisen Sie auf das oben gezeigte Dockerfile
+  #  ports:
+  #    - "7000:7001"
+  #  volumes:
+  #    - /etc/timezone:/etc/timezone:ro # sync time zone with host machine
+  #    - /etc/localtime:/etc/localtime:ro
+  #    - ./development/src:/code
 
 ```
 </details>
