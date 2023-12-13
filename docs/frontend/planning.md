@@ -18,7 +18,6 @@ By integrating state-of-the-art forecasting models with real-time weather data, 
 <br>
 [<i class="fas fa-folder"></i> Check out our vue.js VacancyPrediction component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Vacancies/VacancyPrediction.vue){:target="_blank"}
 
-<span style="color:red;">Auf Modellperformance verweisen</span>
 
 ## General Outages
 
@@ -31,8 +30,6 @@ It is important to emphasise that weather-related considerations are excluded du
 <br>
 [<i class="fas fa-folder"></i> Check out our vue.js AbsencePredictionFiltered component](https://github.com/UHPDome/backend_mainpost/blob/main/frontend/src/components/Views/Vacancies/AbsencePredictionFiltered.vue){:target="_blank"}
 
-
-<span style="color:red;">Auf Modellperformance verweisen</span>
 
 ## Substitute Workers
 This comprehensive view allows users to track the absence of individual employees on specific days and understand the reasons for each absence. The information is dynamically updated as soon as absences are recorded by the previously introduced components. The view makes it possible to switch between a weekly and daily perspective, providing a differentiated understanding of absence patterns.
@@ -83,11 +80,10 @@ Alternatively, users can decide in favour of the traditional company approach, w
 ```
 </details>
 
-<span style="color:red;">Auf Modellperformance verweisen</span>
 
 ## Model Performance
 
-In this final view of our web application, users can explore and analyse the performance of machine learning models through visual representations. By using MLflow to track models, performance metrics are presented using embedded images that provide detailed insights into key parameters. MLflow's specialised features, such as model tracking, make the view an informative and visually engaging experience. Users can seamlessly evaluate and compare the efficiency of different machine learning models.
+In this final view of our web application, users can explore and analyse the performance of our machine learning models through visual representations. By using MLflow to track models, performance metrics are presented using embedded images that provide detailed insights into key parameters. MLflow's specialised features, such as model tracking, make the view an informative and visually engaging experience. Users can seamlessly evaluate and compare the efficiency of different machine learning models.
 These models are predictions for weather-related employee shortages. 
 
 ### Feature Influence of the weather data
