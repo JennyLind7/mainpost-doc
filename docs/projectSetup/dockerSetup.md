@@ -1,6 +1,6 @@
 # <i class="fab fa-docker"></i> Docker Setup
 
-<span style="color: red;">Bild Docker Setup</span>
+![Docker Setup](Docker_set.png)
 
 ## Vuejs - Frontend
 <span style="margin-left:20px;">Right now in docker compose the dev dockerfile gets executed.</span>
