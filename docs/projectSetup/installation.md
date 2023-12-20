@@ -1,7 +1,12 @@
 # <i class="fas fa-wrench"></i>  Installation
 
-<i class="fab fa-docker" style="margin-left:20px;"></i><span style="margin-left:20px;">Install Docker on your system</span><br>
-<i class="fab fa-github" style="margin-left:20px;"></i><span style="margin-left:20px;">You need a GitHub account</span>
+
+<i class="fab fa-docker"></i><span style="margin-left: 20px;">Make sure you have docker desktop installed on your local machine</span><br>
+
+- Minimum of 6GB Memory allocated in Docker Desktop and 25 GB of free Diskspace (Open Docker Desktop -> Settings -> Resources)
+
+<i class="fab fa-github"></i><span style="margin-left: 20px;">You need a GitHub account</span>
+
 
 
 ## Project Setup
@@ -53,6 +58,19 @@ cd backend_mainpost
 docker-compose up
 ```
 ---
+
+
+<strong>Note:</strong>
+
+- initial build can take up to 30 minutes
+- we ran into problems while building in the eduroam network because of firewall and proxy policies
+- If you are on a Windows Machine, use VSCode
+- If you want to enable cron scheduling you have to change the crontab from CLRF to LF. You can do this by clicking on the icon on the bottom right corner:
+
+![CLRF](crf.png)
+
+---
+
 
 ### docker-compose.yml
 

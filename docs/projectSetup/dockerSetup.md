@@ -136,40 +136,28 @@ CMD ["mlflow", "server", "--backend-store-uri", "/mlflow/mlruns", "--default-art
 <summary>Cronjob Dockerfile</summary>
 
 ```
-# Use the Python base image
+# Verwenden Sie das Python-Basisimage
 FROM python:3.9
 
-# Set work directory in the container
-WORKDIR /app
+# Arbeitsverzeichnis im Container festlegen
+WORKDIR /code
 
-# Create a virtual environment
-RUN python -m venv /venv
+# Kopieren Sie die Anwendungsdateien in das Arbeitsverzeichnis im Container
+COPY ./development/src/update_data.py /code/update_data.py
+COPY ./development/src/update_predictions.py /code/update_predictions.py
+COPY ./development/src/retrain_models.py /code/retrain_models.py
 
-# Activate the virtual environment
-ENV PATH="/venv/bin:$PATH"
+# Installieren der erforderlichen python Abhängigkeiten
+COPY docker/cron/requirements.txt /code/requirements.txt
 
-# Copy the application files to the work directory in the container
-COPY ./development/src/update_data.py /app/update_data.py
-COPY ./development/src/retrain_models.py /app/retrain_models.py
-
-# Installation of the required python dependencies
-COPY docker/development/requirements.txt /app/requirements.txt
-
-# Installation of the required python dependencies
-RUN pip install -r /app/requirements.txt
-
-# Pulling Ubuntu image
-#FROM ubuntu:20.04
+# Installieren der erforderlichen Python-Abhängigkeiten
+RUN pip install -r /code/requirements.txt
 
 # Updating packages and installing cron
-RUN apt-get update && apt-get install cron -y 
-
-# Giving executable permission to the script file
-RUN chmod +x /app/update_data.py
-RUN chmod +x /app/retrain_models.py
+RUN apt-get update && apt-get -y install cron
 
 # Adding crontab to the appropriate location
-COPY docker/development/crontab /etc/cron.d/crontab
+COPY docker/cron/crontab /etc/cron.d/crontab
 
 # Giving permission to crontab file
 RUN chmod 0644 /etc/cron.d/crontab
@@ -178,7 +166,8 @@ RUN chmod 0644 /etc/cron.d/crontab
 RUN /usr/bin/crontab /etc/cron.d/crontab
 
 # Creating entry point for cron 
-ENTRYPOINT ["cron", "-f"]
+
+CMD ["cron","-f", "-l", "2"]
 
 ```
 </details>

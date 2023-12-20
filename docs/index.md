@@ -8,6 +8,7 @@ Our application makes it possible to predict the cancellations of the Main-Post 
 <br>
 **The following visualisation gives an overview of the functionalities of our application:**
 <br>
+<br>
 ![Application Overview](application_overview.png)
 <br>
 <br>
