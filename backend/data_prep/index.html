@@ -1,0 +1,1715 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../frontend/planning/">
+      
+      
+        <link rel="next" href="../models/">
+      
+      
+      <link rel="icon" href="../../assets/mainpost.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Data Preparation - Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../customer/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="lime">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#database-connector" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Project Documentation" class="md-header__button md-logo" aria-label="Project Documentation" data-md-component="logo">
+      
+  <img src="../../assets/mainpost_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Project Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Preparation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="lime"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/UHPDome/backend_mainpost" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../projectSetup/installation/" class="md-tabs__link">
+          
+  
+  Project Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/overview/" class="md-tabs__link">
+          
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../data/overview_data/" class="md-tabs__link">
+          
+  
+  Data Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../externalServices/servicesWebApp/" class="md-tabs__link">
+          
+  
+  Services
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../frontend/landingpage/" class="md-tabs__link">
+          
+  
+  Web Application
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Backend
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Project Documentation" class="md-nav__button md-logo" aria-label="Project Documentation" data-md-component="logo">
+      
+  <img src="../../assets/mainpost_logo.png" alt="logo">
+
+    </a>
+    Project Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/UHPDome/backend_mainpost" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Project Setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Project Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projectSetup/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projectSetup/dockerSetup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Database
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/auth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/frontend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frontend
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/backend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backend
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/dockerizedArchitecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dockerized Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Data Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/overview_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Internal data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/databaseModel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Database model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Services
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../externalServices/servicesWebApp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Further services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Web Application
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Web Application
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/landingpage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Landing Page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/login/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Login
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/dashboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dashboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/districts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Districts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/employees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Employees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/absences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Absence Registration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/historical/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historical
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Backend
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Data Preparation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Data Preparation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#database-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Connector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weather-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weather Connector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preprocess-absences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preprocess Absences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-covariates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Covariates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-covariates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update Covariates
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prediction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prediction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Data Preparation</h1>
+
+<p>Detailed data pre-processing is essential to transform raw data into a structured, cleansed form. This improves the quality of the analysis results and enables precise predictions, which in turn strengthens decision-making and operational efficiency.
+The data we worked with was made available in csv files. 
+<br>
+<br>
+A central directory of our application contains essential pre-processing files as well as the implemented connectors for the Supabase database and the weather API. These files play a crucial role in the processing and integration of the data provided.
+These files can be found in the <a href="https://github.com/UHPDome/backend_mainpost/tree/main/development/src/data_scripts" target="_blank">data_scripts</a> subfolder of the src directory.</p>
+<h2 id="database-connector">Database Connector</h2>
+<p>This script provides functions for interacting with our Supabase database. The functions enable data to be loaded as a DataFrame, the latest entry to be retrieved from a table, data to be inserted into a table and data to be updated in a table.</p>
+<details>
+<summary>supabase_connector.py</summary>
+
+
+<pre><code>&quot;&quot;&quot;This script contains functions to connect to supabase. 
+
+They contain functionality for loading from supabase, inserting into supabase and updating data in supabase
+&quot;&quot;&quot;
+
+import os 
+from dotenv import load_dotenv
+from supabase import create_client, Client
+import pandas as pd
+import json 
+#import retry
+
+load_dotenv()
+url: str = os.environ.get(&quot;SUPABASE_URL&quot;)
+key: str = os.environ.get(&quot;SUPABASE_KEY&quot;)
+supabase: Client = create_client(url, key)
+
+#@retry(delay=5, tries=6)
+def load_dataframe(name: str) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Load table from supabase by name and transform to pandas dataframe&quot;&quot;&quot;
+    data = supabase.table(name).select(&quot;*&quot;).execute()
+    data_json = data.model_dump_json()
+    data_json = json.loads(data_json)
+    df = pd.DataFrame(data_json[&quot;data&quot;])
+    if 'date' in df.columns:
+        df['date'] = pd.to_datetime(df['date'])
+    return df
+
+def load_dataframe_latest(name: str) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Load the latest entry of a supabase table to cut waiting time&quot;&quot;&quot;
+    data, count = supabase.table(name).select('*').order('date', desc=True).limit(1).execute()
+    df = pd.DataFrame(data[1])
+    if 'date' in df.columns:
+        df['date'] = pd.to_datetime(df['date'])
+    return df
+
+def insert_supabase(name: str, df: pd.DataFrame) -&gt; None:
+    &quot;&quot;&quot;inserts the dataframe into the supabase table&quot;&quot;&quot;
+    df_json = df.to_json(orient='records')
+    df_json = json.loads(df_json)
+    data = supabase.table(name).insert(df_json).execute()
+
+
+def update_supabase(name: str, df: pd.DataFrame) -&gt; None:
+    &quot;&quot;&quot;Update the supabase table with the Dataframe.&quot;&quot;&quot;
+    data = supabase.table(&quot;countries&quot;).update({&quot;country&quot;: &quot;Indonesia&quot;, &quot;capital_city&quot;: &quot;Jakarta&quot;}).eq(&quot;id&quot;, 1).execute()
+
+</code></pre>
+
+</details>
+
+<h2 id="weather-connector">Weather Connector</h2>
+<p>This script retrieves weather data from the Visual Crossing Weather API and integrates it into a DataFrame that is used to forecast absences. The functions <em>_load_dataframe</em> loads weather data based on a start and end date, <em>_get_transform_weather</em> transforms the data by encoding weather conditions one-hot, and <em>_get_non_intersect_columns</em> adds non-overlapping columns required for the model. Finally, the <em>get_weather_data</em> function returns the transformed covariates data frame, which contains weather information as well as area and reason for absence.</p>
+<details>
+<summary>crossingweather_connector.py</summary>
+
+
+<pre><code>&quot;&quot;&quot;This file contains functions to load weather data from Visual Crossing Weather API and transform it.
+
+There is the option to load 15 day forecast data or history data for a given daterange.
+The data is transformed afterwards in different steps:
+    1. one-hot encoding of weather conditions
+    2. join non intersecting columns of weather and covariates dataframe
+    3. add area_id and reason to the covariates dataframe
+&quot;&quot;&quot;
+
+import os
+import pandas as pd
+import csv
+import codecs
+
+from dotenv import load_dotenv
+import urllib.request
+import urllib.error
+import sys
+import data_scripts.supabase_connector as supabase_connector
+
+load_dotenv()
+BaseURL: str = os.environ.get(&quot;VISUALCROSSING_URL&quot;)
+ApiKey: str = os.environ.get(&quot;VISUALCROSSING_KEY&quot;)
+
+QueryLocation = '&amp;location=' + 'Wuerzburg,Germany'
+QueryKey = '&amp;key=' + ApiKey
+
+def _load_dataframe(StartDate: str = '', EndDate: str = ''):
+    &quot;&quot;&quot;Load weather data from Visual Crossing Weather API.
+
+    If no start and end date is given, loads 15 day forecast data.
+    Returns the weather data as Dataframe.
+    &quot;&quot;&quot;
+
+    Params: str = '&amp;aggregateHours=24&amp;unitGroup=metric'#&amp;contentType=json'
+
+    if len(StartDate)&gt;0:
+        print(' - Fetching history for date: ', StartDate,'-',EndDate)
+
+        # History requests require a date.  We use the same date for start and end since we only want to query a single date in this example
+        QueryDate: str = '&amp;startDateTime=' + StartDate + 'T00:00:00&amp;endDateTime=' +EndDate + 'T00:00:00'
+        QueryTypeParams: str = 'history?'+ Params + '&amp;dayStartTime=0:0:00&amp;dayEndTime=0:0:00' + QueryDate
+
+    else:
+        print(' - Fetching forecast data')
+        QueryTypeParams: str = 'forecast?'+ Params + '&amp;shortColumnNames=false'
+
+    # Build the entire query
+    URL = BaseURL + QueryTypeParams + QueryLocation + QueryKey
+
+    try: 
+        request = urllib.request.urlopen(URL)
+    except urllib.error.HTTPError  as e:
+        ErrorInfo= e.read().decode() 
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    except  urllib.error.URLError as e:
+        ErrorInfo= e.read().decode() 
+        print('Error code: ', e.code,ErrorInfo)
+        sys.exit()
+
+    CSVText = csv.reader(codecs.iterdecode(request, 'utf-8'))
+
+    value_list = []
+    for row in CSVText:
+        value_list.append(row)
+
+    df = pd.DataFrame(columns=value_list[0])
+    for i in range(1, len(value_list)):
+        df.loc[len(df)] = value_list[i]
+
+    return df
+
+def _get_transform_weather(startdate: str, enddate: str) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Load and Transform weather data.
+
+    Call _load_dataframe and load weather data.
+    Transform weather data by one-hot encoding weather conditions and keeping necessary columns.
+    &quot;&quot;&quot;
+    if startdate &gt; enddate:
+        past_df = _load_dataframe()
+    else:
+        past_df = _load_dataframe(StartDate=startdate, EndDate=enddate)
+
+    past_df = past_df.rename(columns={'Date time':'date', 'Temperature': 'temp', 'Maximum Temperature':'tempmax', 'Minimum Temperature':'tempmin', 'Conditions':'conditions'})
+    past_df = past_df[['date', 'temp', 'tempmax', 'tempmin', 'conditions']]
+    past_df = pd.get_dummies(past_df, columns = ['conditions'], prefix='', prefix_sep='', dtype=int)
+    return past_df
+
+def _get_non_intersect_columns(weather_df: pd.DataFrame, covariates_df: pd.DataFrame) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Get the non intersecting columns of weather and covariates dataframe to create a complete Table.
+
+    The columns from the initial covariates table cover all the weather conditions and thus are used to extent the current covariates table that usually only contains a few conditions (e.g. rain, snow, fog).
+    The non intersecting column are joined to the weather dataframe and are filled with 0s. 
+    &quot;&quot;&quot;
+    intersect_cols = set(weather_df.columns).intersection(set(covariates_df.columns))
+    non_intersect_cols = [col for col in covariates_df.columns if col not in intersect_cols]
+    non_intersect_cols.remove('id')
+    covariates_return = pd.concat([weather_df, pd.DataFrame(columns=non_intersect_cols)], axis=1)
+    covariates_return.fillna(0, inplace=True)
+    covariates_return['date'] = pd.to_datetime(covariates_return['date'])
+    return covariates_return
+
+def _add_reason_id(noint:pd.DataFrame, covariates: pd.DataFrame) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Add the area_id and reason to the covariates Dataframe.&quot;&quot;&quot;
+
+    noint_reason = pd.DataFrame()
+
+    for reason in covariates.reason.unique():
+        noint.reason = reason
+        noint_reason = pd.concat([noint, noint_reason])
+
+    noint_reason_area = pd.DataFrame()
+
+    for area_id in covariates.area_id.unique():
+        noint_reason.area_id = area_id
+        noint_reason_area = pd.concat([noint_reason, noint_reason_area])
+
+    noint_reason_area.reset_index(inplace=True, drop=True)
+
+    noint_reason_area['id'] = noint_reason_area.index + max(covariates['id'].astype(int))+1
+    noint_reason_area['date'] = noint_reason_area['date'].astype(str)   
+
+    return noint_reason_area
+
+def get_weather_data(
+        covariates: pd.DataFrame, 
+        StartDate: str = '', 
+        EndDate: str = '') -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Calls above functions to load and transform the weather data.&quot;&quot;&quot;
+    weather_df = _get_transform_weather(StartDate, EndDate)
+    no_int = _get_non_intersect_columns(weather_df, covariates)
+    noint_reason_area =_add_reason_id(no_int, covariates)
+    return noint_reason_area
+
+</code></pre>
+
+</details>
+
+<h2 id="preprocess-absences">Preprocess Absences</h2>
+<p>This script processes and transforms absence data by assigning it to an area (district) and converting it to daily data. The absence reasons 'holiday' and 'illness' are taken into account. The resulting DataFrame is then totalled and filled with zeros for days without absences. The script also excludes specific area IDs ('2.6 Z&amp;S' and '2.8 Z&amp;S') and saves the transformed DataFrame as a CSV file.</p>
+<details>
+<summary>preprocess_absences.py</summary>
+
+
+<pre><code>&quot;&quot;&quot;This script loads and transforms the absences data.
+
+This is a multistep process:
+    1. Transpose to daily data per row instead of ranges in columns.
+    2. Join area_id and reason to the absences
+    3. Sum up absences per day, area_id and reason
+    4. Fill Dataframe with 0 for days where there are no absences
+
+The resulting data is used to train the timeseries forecasting model and contains the prediction variable.
+The file is only needed for initalization of the supabase table for absences.
+&quot;&quot;&quot;
+
+import pandas as pd
+import data_scripts.supabase_connector as supabase_connector
+
+def _join_bezirk_to_absences(df: pd.DataFrame) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Join area_id to the absences&quot;&quot;&quot;
+    allocations_df = supabase_connector.load_dataframe(&quot;allocations&quot;)
+    allocations_df.rename(columns={'id':'allocation_id'}, inplace=True)
+    rounds_df = supabase_connector.load_dataframe(&quot;districts&quot;)
+
+    bezirk_df = allocations_df.merge(rounds_df, how='left', left_on='district_id', right_on='id')
+    bezirk_df = bezirk_df[['district_id', 'allocation_id', 'area_id']].drop_duplicates()
+
+    df = df.merge(bezirk_df, how='left', left_on='allocation_id', right_on='allocation_id')
+    return df
+
+def load_and_preprocess_absences() -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Load absences data and transpose to daily data instead of ranges.
+
+    Transposition is done with a list comprehension that is significantly faster then other tested methods (for loops f.e.).
+    Call _join_bezirk_to_absences to join the area_id to the absences.
+    &quot;&quot;&quot;
+    absences_df = supabase_connector.load_dataframe(&quot;absences&quot;)
+    absences_df = absences_df.dropna(subset=['start_date', 'end_date'])
+    absences_df = absences_df[absences_df['reason'].isin(['vacation', 'illness'])]
+    absences_df = pd.concat([pd.DataFrame({'date': pd.date_range(row.start_date, row.end_date),
+               'employee_id': row.employee_id,
+               'allocation_id': row.allocation_id,
+               'id':row.id,
+               'reason':row.reason}, columns=['date', 'employee_id', 'allocation_id','id', 'reason']) 
+           for i, row in absences_df.iterrows()], ignore_index=True)
+    absences_df['date'] = pd.to_datetime(absences_df['date'])
+
+    absences_df = _join_bezirk_to_absences(absences_df)
+
+    return absences_df
+
+def _sum_df(df: pd.DataFrame) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Sum up absences per day, area_id and reason.&quot;&quot;&quot;
+    df = df.drop(columns=['employee_id', 'allocation_id', 'id', 'district_id'])
+    df = df.groupby(['area_id','date', 'reason']).sum().sort_values('date').reset_index()
+    return df
+
+def _fill_data(DataFrame: pd.DataFrame) -&gt; pd.DataFrame:  
+    &quot;&quot;&quot;Fill absence Dataframe with 0 for days where there are no absences.
+
+    This is important for the timeseries forecasting models with darts, because the every timeseries of the multiple timeseries need to have the same length.
+    &quot;&quot;&quot;
+    DataFrame_filled = DataFrame.copy()
+    for area_id in DataFrame['area_id'].unique():
+        for reason in DataFrame['reason'].unique(): 
+            DataFrame_Slice = DataFrame[DataFrame['area_id']==area_id]
+            DataFrame_Slice = DataFrame_Slice[DataFrame_Slice['reason']==reason]
+            Bool_Series = pd.DataFrame({'date':DataFrame['date'].unique()})
+            Bool_Series['isinbool'] = pd.DataFrame(DataFrame['date'].unique()).isin(DataFrame_Slice['date'].unique())
+            Bool_Series = Bool_Series[Bool_Series['isinbool']==False]
+            Bool_Series['count'] = 0
+            Bool_Series['area_id'] = area_id
+            Bool_Series['reason'] = reason
+            Bool_Series=Bool_Series.drop(['isinbool'], axis=1)
+            DataFrame_filled = pd.concat([DataFrame_filled, Bool_Series])
+
+    DataFrame_filled = DataFrame_filled.reset_index(drop=True)
+    return DataFrame_filled
+
+def transform_absences(absences_df: pd.DataFrame) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Transform and save absences data.
+
+    This function calls above functions and thus functions as a datapipeline with minimal transformations added.
+    That is the exclution of the area_id 2.6 Z&amp;S and 2.8 Z&amp;S. 
+    &quot;&quot;&quot;
+    absences_df = load_and_preprocess_absences()
+    absences_df = absences_df[absences_df.area_id != '2.6 Z&amp;S']
+    absences_df = absences_df[absences_df.area_id != '2.8 Z&amp;S']
+    absences_df = absences_df.reset_index(drop=True)   
+    absences_df['count'] = 1
+
+    absences_complete = _sum_df(absences_df)
+    absences_complete = _fill_data(absences_complete)
+
+    absences_complete.to_csv('../data/processed/absences_daily_multiple_m_reason.csv', index=False)
+
+
+</code></pre>
+
+</details>
+
+<h2 id="build-covariates">Build Covariates</h2>
+<p>This script processes time series data to forecast absences. The function create_datetime_features adds temporal features to a DataFrame. The <em>_transform_save_weather</em> and <em>_join_id_reason_to_covariates</em> functions transform and integrate weather data as well as information on the area and reason for absence. The <em>load_and_preprocess_weather</em> function loads weather data, transforms it and adds additional information to create a standardised DataFrame for further analysis.</p>
+<details>
+<summary>build_covariates.py</summary>
+
+
+<pre><code>&quot;&quot;&quot;This script is used to build the covariates for training the timeseries forecasting model.
+
+It contains code that transforms the external weather data and joins it to the area and reason specific internal data.
+Is only needed for inital transformation of the external weatherdata, to initialize the supabase table for covariates.
+&quot;&quot;&quot;
+
+import pandas as pd
+import data_scripts.supabase_connector as supabase_connector
+
+def create_datetime_features(df: pd.DataFrame) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Create time series features from datetime index.
+
+    Only needed for none darts testing purposes.
+    Returns the dataframe with additional time series features.
+    &quot;&quot;&quot;
+    df['dayofweek'] = df['date'].dt.dayofweek
+    df['quarter'] = df['date'].dt.quarter
+    df['month'] = df['date'].dt.month
+    df['year'] = df['date'].dt.year
+    df['dayofyear'] = df['date'].dt.dayofyear
+    df['dayofmonth'] = df['date'].dt.day
+    df['weekofyear'] = df['date'].dt.isocalendar()['week']
+    return df
+
+
+def _transform_save_weather(df: pd.DataFrame, name: str) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Transform and save weather data.
+
+    Use one-hot encoding for weather conditions.
+    Save the transformed dataframe by given name to csv.
+    &quot;&quot;&quot;
+    df['date'] = df['datetime']
+    df = df.drop(columns=['datetime'])
+    df = df[['date', 'temp', 'tempmax', 'tempmin', 'conditions']]
+    df = pd.get_dummies(df, columns = ['conditions'], prefix='', prefix_sep='', dtype=int)
+    df.to_csv(f'../data/processed/{name}.csv', index=False)
+    return df
+
+def _join_id_reason_to_covariates(covariates: pd.DataFrame) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Join area_id and reason to the covariates Dataframe.&quot;&quot;&quot;
+    reason_df = pd.DataFrame()
+    absences_df = supabase_connector.load_dataframe(&quot;absences_daily&quot;)
+
+    for reason in absences_df.reason.unique():
+        covariates.reason = reason
+        reason_df = pd.concat([covariates, reason_df])
+
+    reason_df_area = pd.DataFrame()
+
+    for area_id in absences_df.area_id.unique():
+        reason_df.area_id = area_id
+        reason_df_area = pd.concat([reason_df, reason_df_area])
+
+    reason_df_area.reset_index(inplace=True, drop=True)
+    reason_df_area['date'] = reason_df_area['date'].astype(str)   
+
+    return reason_df_area
+
+def load_and_preprocess_weather() -&gt; pd.DataFrame:
+    &quot;&quot;&quot;Load Data and call above functions.
+
+    transforms and saves the weather data and returns the resulting Dataframe.
+    &quot;&quot;&quot;
+    weather_past_df = pd.read_csv('../data/external/weather_df.csv', delimiter=',', parse_dates=['datetime'])
+    weather_past_df = _transform_save_weather(weather_past_df, &quot;covariates_past_single&quot;)
+    weather_past_df = _join_id_reason_to_covariates(weather_past_df)
+    weather_past_df.to_csv('../data/processed/covariates_past_multiple_m_reason.csv', index=False)
+    return weather_past_df
+
+</code></pre>
+
+</details>
+
+<h2 id="update-covariates">Update Covariates</h2>
+<p>This code updates the covariates table for the forecast of absences. Firstly, data is loaded from the 'absences_daily' and 'covariates' tables. A start date for the update is then defined, which is one day after the last date available in the covariates table. If new data is available, weather data for the period between the specified start date and today's date is retrieved and inserted into the covariates table.</p>
+<details>
+<summary>update_covariates.py</summary>
+
+
+<pre><code>&quot;&quot;&quot;This script wraps the functions from crossingweather_connector and supabase_connector to update the covariates table.&quot;&quot;&quot;
+import os
+import pandas as pd
+import json 
+from datetime import date, timedelta
+
+import data_scripts.supabase_connector as supabase_connector
+import data_scripts.crossingweather_connector as crossingweather_connector
+from data_scripts.build_covariates import create_datetime_features
+
+absences_df = supabase_connector.load_dataframe(&quot;absences_daily&quot;)
+covariates = supabase_connector.load_dataframe(&quot;covariates&quot;)
+
+startdate= str(covariates['date'].max().date() + timedelta(days=1))
+enddate = str(date.today())
+
+def update_covariates() -&gt; None:
+    &quot;&quot;&quot;call functions from crossingweather_connector and supabase_connector to update the covariates table&quot;&quot;&quot;
+    if startdate &gt; enddate:
+        print('No new data available')
+    else:
+        covariates_df = crossingweather_connector.get_weather_data(covariates, startdate, enddate)
+        supabase_connector.insert_supabase('covariates', covariates_df)
+
+</code></pre>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 Simon Unterlugauer, Dominik Petermann, Jakob Weigand, Jenny Lindner
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+      
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+      
+        <script src="../../customerjs/style.js"></script>
+      
+    
+  </body>
+</html>
